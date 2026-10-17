@@ -35,7 +35,18 @@
       "max_cards": 12,
       "lod_index": 1
      },
-     "rig": {},
+     "rig": {
+      "humanoid_overrides": [
+       {
+        "role": 13,
+        "bone": "hand.r"
+       },
+       {
+        "role": 9,
+        "bone": "hand.l"
+       }
+      ]
+     },
      "animations": {
       "import_animations": true
      },

@@ -4934,6 +4934,16 @@
    "rotation_node_index": 7
   },
   "events": [],
-  "curves": []
+  "curves": [],
+  "humanoid_overrides": [
+   {
+    "role": 13,
+    "bone": "hand.r"
+   },
+   {
+    "role": 9,
+    "bone": "hand.l"
+   }
+  ]
  }
 }
