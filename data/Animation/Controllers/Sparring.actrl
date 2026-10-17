@@ -1,0 +1,702 @@
+{
+ "animation_controller": {
+  "parameters": [
+   {
+    "name": "Attack",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "AttackKind",
+    "type": 1,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Block",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Hit",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Dodge",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "DodgeDir",
+    "type": 1,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Dead",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   }
+  ],
+  "layers": [
+   {
+    "name": "Base",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [],
+    "default_state": "Idle",
+    "states": [
+     {
+      "name": "Idle",
+      "motion": 0,
+      "clip": {
+       "uid": "aa757509-46e2-7c4b-98bb-55951d489790"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Block",
+      "motion": 0,
+      "clip": {
+       "uid": "009a2520-1735-b24d-a450-5d3ee8292185"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "Guard",
+      "editor_position": {
+       "x": 0.0,
+       "y": 260.0
+      }
+     },
+     {
+      "name": "BlockHit",
+      "motion": 0,
+      "clip": {
+       "uid": "65189ecf-fba1-2741-8e6b-9de20e4f7799"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Guard",
+      "editor_position": {
+       "x": 260.0,
+       "y": 300.0
+      }
+     },
+     {
+      "name": "Hit",
+      "motion": 0,
+      "clip": {
+       "uid": "7d2739d7-964d-7747-a937-942086538914"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Stagger",
+      "editor_position": {
+       "x": -280.0,
+       "y": 200.0
+      }
+     },
+     {
+      "name": "Death",
+      "motion": 0,
+      "clip": {
+       "uid": "5e81f7f9-e7b1-0645-8045-ac807c5dadf9"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Down",
+      "editor_position": {
+       "x": -280.0,
+       "y": 380.0
+      }
+     },
+     {
+      "name": "Down",
+      "motion": 0,
+      "clip": {
+       "uid": "eced903d-2842-a444-a1e5-f7717373f9df"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "Down",
+      "editor_position": {
+       "x": -40.0,
+       "y": 460.0
+      }
+     },
+     {
+      "name": "GetUp",
+      "motion": 0,
+      "clip": {
+       "uid": "310fae54-e61c-1a44-a040-14033311245e"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Down",
+      "editor_position": {
+       "x": 220.0,
+       "y": 460.0
+      }
+     },
+     {
+      "name": "Chop",
+      "motion": 0,
+      "clip": {
+       "uid": "c188eb1f-9342-2b41-838b-7f0a2c941393"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Attack",
+      "editor_position": {
+       "x": 300.0,
+       "y": -220.0
+      }
+     },
+     {
+      "name": "Slice",
+      "motion": 0,
+      "clip": {
+       "uid": "8b398b8a-3541-e74f-835c-72d579d0510b"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Attack",
+      "editor_position": {
+       "x": 300.0,
+       "y": -100.0
+      }
+     },
+     {
+      "name": "Stab",
+      "motion": 0,
+      "clip": {
+       "uid": "175d215a-43bf-114b-9d4e-20ea96128668"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Attack",
+      "editor_position": {
+       "x": 300.0,
+       "y": 20.0
+      }
+     },
+     {
+      "name": "DodgeLeft",
+      "motion": 0,
+      "clip": {
+       "uid": "4548aef2-fa75-0040-b7e1-cc486ffafbe8"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Dodge",
+      "editor_position": {
+       "x": -300.0,
+       "y": -220.0
+      }
+     },
+     {
+      "name": "DodgeRight",
+      "motion": 0,
+      "clip": {
+       "uid": "166987d0-a057-fd40-bd84-bdb46e7c5dd5"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Dodge",
+      "editor_position": {
+       "x": -300.0,
+       "y": -110.0
+      }
+     },
+     {
+      "name": "DodgeBack",
+      "motion": 0,
+      "clip": {
+       "uid": "4e50000d-b0df-f247-8505-e2d37930f55e"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Dodge",
+      "editor_position": {
+       "x": -300.0,
+       "y": 0.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "",
+      "destination": "Death",
+      "conditions": [
+       {
+        "parameter": "Dead",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "",
+      "destination": "Hit",
+      "conditions": [
+       {
+        "parameter": "Hit",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "Block",
+        "mode": 5,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "Dead",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.05999999865889549,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": true
+     },
+     {
+      "source": "Idle",
+      "destination": "Block",
+      "conditions": [
+       {
+        "parameter": "Block",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Block",
+      "destination": "Idle",
+      "conditions": [
+       {
+        "parameter": "Block",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Block",
+      "destination": "BlockHit",
+      "conditions": [
+       {
+        "parameter": "Hit",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.03999999910593033,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "BlockHit",
+      "destination": "Block",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.800000011920929,
+      "duration": 0.11999999731779099,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Hit",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8500000238418579,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Death",
+      "destination": "Down",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9700000286102295,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Down",
+      "destination": "GetUp",
+      "conditions": [
+       {
+        "parameter": "Dead",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "GetUp",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Idle",
+      "destination": "Chop",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "AttackKind",
+        "mode": 2,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Chop",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Idle",
+      "destination": "Slice",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "AttackKind",
+        "mode": 2,
+        "threshold": 1.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Slice",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Idle",
+      "destination": "Stab",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "AttackKind",
+        "mode": 2,
+        "threshold": 2.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Stab",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Idle",
+      "destination": "DodgeLeft",
+      "conditions": [
+       {
+        "parameter": "Dodge",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "DodgeDir",
+        "mode": 2,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "DodgeLeft",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Idle",
+      "destination": "DodgeRight",
+      "conditions": [
+       {
+        "parameter": "Dodge",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "DodgeDir",
+        "mode": 2,
+        "threshold": 1.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "DodgeRight",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Idle",
+      "destination": "DodgeBack",
+      "conditions": [
+       {
+        "parameter": "Dodge",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "DodgeDir",
+        "mode": 2,
+        "threshold": 2.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "DodgeBack",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -300.0,
+     "y": -320.0
+    },
+    "any_state_position": {
+     "x": -560.0,
+     "y": 300.0
+    }
+   }
+  ],
+  "preview_model": {
+   "uid": "c5e502e9-2890-3046-b8a2-022e0b9ecde0"
+  }
+ }
+}

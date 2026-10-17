@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>app-script</name>
+    </assembly>
+    <members>
+        <member name="T:AnimationSample.TrainingDummy">
+            <summary>
+            A training dummy that rocks back when struck: a damped spring on its pivot's tilt, pushed by
+            <see cref="M:AnimationSample.TrainingDummy.Impact(Vector3,System.Single)"/>.
+            </summary>
+        </member>
+        <member name="M:AnimationSample.TrainingDummy.Impact(Vector3,System.Single)">
+            <summary>Strikes the dummy from <paramref name="direction"/> (world, horizontal).</summary>
+        </member>
+        <member name="T:AnimationSample.Duelist">
+            <summary>
+            A sparring fighter driven only through its controller's parameters (Sparring.actrl): triggers for
+            attacks, dodges and hits, a Block bool, a Dead bool. The state machine does the rest - Any State
+            transitions into Hit and Death, a guard that turns hits into block reactions, exit times back to
+            Idle. Damage lands on the attack clips' "Hit" events; the AI reads the opponent's state tags
+            (Guard, Dodge, Down) to decide what the blow did.
+            </summary>
+        </member>
+        <member name="M:AnimationSample.Duelist.ReceiveBlow(System.Int32,Vector3)">
+            <summary>Damage after the guard and dodge checks; returns what the blow did.</summary>
+        </member>
+        <member name="T:AnimationSample.RootMotionStation">
+            <summary>Status of the root motion exhibit: what each actor plays and how far the clip moved it.</summary>
+        </member>
+        <member name="T:AnimationSample.HandIkStation">
+            <summary>
+            Hands on props with Two Bone IK: the driver's hands hold a steering wheel that turns on its own
+            (targets are children of the wheel rim, poles keep the elbows down), and a second character
+            reaches for an orb flying a figure-eight, with soften easing the arm out before it locks.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.GalleryModel">
+            <summary>The data model "gallery" of UI/Hud.rhtml.</summary>
+        </member>
+        <member name="T:AnimationSample.GalleryHud">
+            <summary>
+            The gallery HUD: the card of the station the hero stands at (what it shows, live values), the
+            feed of animation events around the hero, the hero's state per layer, and the controls (F1).
+            </summary>
+        </member>
+        <member name="T:AnimationSample.RootMotionActor">
+            <summary>
+            Root motion. The animation component has Apply Root Motion on, so the clips' root bone motion
+            moves the entity itself: the climb lifts the character onto the box, the dashes and the
+            knockback carry it along the lane - no script moves it. This script only plays the states in
+            turn (CrossFade) and puts the character back at its start between performances.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.BlendSpaceStation">
+            <summary>
+            Blend spaces driven by parameters. The runner's 1D space (Idle - Walk - Jog - Sprint on Speed)
+            sweeps its speed up and down; the knight's 2D directional space (walk / run / strafes / backward
+            on MoveX, MoveY) follows a direction that circles, shown by the arrow at its feet. Every clip in a
+            space plays at one normalized phase, so the feet stay in step through the blend.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.ChainIkStation">
+            <summary>
+            Chain IK on hierarchies built from plain entities. The robot arm (FABRIK, a pole keeps its
+            elbow up) tracks a drone flying a figure-eight; the tentacle (CCD, which curls the tip first)
+            reaches for the hero when the hero comes close and sways after a wandering point otherwise.
+            Modifiers on plain entities show their solved pose in play mode; in the editor the gizmo
+            previews it.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.CrowdModel">
+            <summary>The data model "crowd" of UI/CrowdHud.rhtml.</summary>
+        </member>
+        <member name="T:AnimationSample.CrowdBenchmark">
+            <summary>
+            The animation scaling benchmark. Spawns a grid of crowd characters, each on the full Hero
+            controller (2D locomotion blend, masked upper-body layer, additive reactions) with foot and
+            look-at IK, and keeps every one busy with its own speed, crouch, aim, sword combos, rolls,
+            jumps and hit reactions, so the profiler's Animation and Rig scopes show what a character
+            costs. Rolls and sword combos move a character by root motion; it walks back to its grid slot
+            afterwards. Up / Down double or halve the crowd, Left / Right change it by CountStep, I turns the
+            IK rigs on or off and F1 the help. SetCount and SetRigs do the same for tools.
+            </summary>
+        </member>
+        <member name="F:AnimationSample.CrowdBenchmark.SPEED_RATE">
+            Parameter change per second, so a new speed or crouch blends in instead of popping.
+        </member>
+        <member name="F:AnimationSample.CrowdBenchmark.RETURN_DISTANCE">
+            A character a root-motion move (roll, sword combo) carried further than this walks back.
+        </member>
+        <member name="F:AnimationSample.CrowdBenchmark.Agent.home">
+            The grid slot and facing the character walks back to after a move carried it away.
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.SetCount(System.Int32)">
+            <summary>Spawns or removes characters until the crowd has `count` (0 to MaxCount); returns the new size.</summary>
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.SetRigs(System.Boolean)">
+            <summary>Turns foot and look-at IK on or off for the whole crowd.</summary>
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.GetStatus">
+            <summary>The crowd size, the rig state and the smoothed frame time, for tools.</summary>
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.LayOut">
+            <summary>Places the crowd on a square grid facing the camera and frames it.</summary>
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.Think(AnimationSample.CrowdBenchmark.Agent)">
+            <summary>A character a move carried off its slot walks back once the move ended; else it decides anew.</summary>
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.WalkHome(AnimationSample.CrowdBenchmark.Agent,System.Single)">
+            <summary>Turns toward the grid slot and walks there, then turns back to the slot's facing.</summary>
+        </member>
+        <member name="M:AnimationSample.CrowdBenchmark.Decide(AnimationSample.CrowdBenchmark.Agent)">
+            <summary>What a character does next: a new speed most of the time, else one of its moves.</summary>
+        </member>
+        <member name="T:AnimationSample.DuelStation">
+            <summary>Status of the sparring state machines: each fighter's state, health and last blow.</summary>
+        </member>
+        <member name="T:AnimationSample.DummyAttacker">
+            <summary>
+            Events as hit frames. The rogue attacks the dummy in a loop; each attack clip carries a "Hit"
+            event on the frame the blade connects (its float parameter is the blow's strength), and only
+            then do the sparks, the sound and the dummy's reaction happen - whatever the clip's speed.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.EventLogEntry">
+            <summary>One animation event as the HUD's event feed lists it.</summary>
+        </member>
+        <member name="T:AnimationSample.EventLog">
+            <summary>
+            The latest animation events around the hero, for the HUD's event feed. Characters add the events
+            their scripts receive in OnAnimationEvent; events far from the hero are left out so the feed
+            follows what the player looks at.
+            </summary>
+        </member>
+        <member name="F:AnimationSample.EventLog.Capacity">
+            <summary>Lines the feed keeps.</summary>
+        </member>
+        <member name="F:AnimationSample.EventLog.ListenRadius">
+            <summary>Events further than this from the hero are not listed (m).</summary>
+        </member>
+        <member name="P:AnimationSample.EventLog.HeroPosition">
+            <summary>Where the hero is; set by the hero every frame.</summary>
+        </member>
+        <member name="P:AnimationSample.EventLog.Version">
+            <summary>Bumps on every change, so the HUD refreshes only then.</summary>
+        </member>
+        <member name="M:AnimationSample.EventLog.Add(System.String,Unravel.Core.AnimationEvent,Vector3)">
+            <summary>Lists an event a character at <paramref name="position"/> received.</summary>
+        </member>
+        <member name="T:AnimationSample.EventsStation">
+            <summary>Status of the events and curves exhibit: the mage's Glow curve and the rogue's last hit.</summary>
+        </member>
+        <member name="T:AnimationSample.FootIkStation">
+            <summary>
+            Foot IK. Two walkers take the same path over steps, a slope and stones: the first plants its
+            feet with a Foot IK component (ground probes, pelvis drop to the lower foot, feet tilted onto the
+            slope, swing feet left alone), the second has none and floats or sinks. The hero has Foot IK too.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.FootstepEffects">
+            <summary>
+            Footstep and landing feedback from animation events: a puff of dust under the foot the event
+            names and a footstep sound, both scaled by the event's weight (a fading clip steps softer).
+            Put it on any character whose clips carry Footstep / Land events.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.HeroController">
+             <summary>
+             The playable hero.
+            
+             Movement goes through the character controller; the animation controller (Hero.actrl) only gets
+             parameters - Speed / Crouch for the 2D locomotion blend space, Grounded, triggers for jump, roll,
+             the sword combo, pick-up and hit reactions, Aim / AimPitch for the masked upper-body layer. The
+             state machine decides; this script reads it back (IsInTag "Busy") to stop steering mid-attack.
+            
+             Root motion is on: the sword attacks, their recoveries and the roll carry their own travel, which
+             the animation system moves through the character controller (so it still collides). Clips the
+             script moves itself - locomotion, jumps, interactions - are imported "Keep In Place". While a
+             Busy state plays the script adds no velocity of its own.
+            
+             Rig modifiers it drives: Foot IK (weight 0 in the air), the head's Look At IK (target: the nearest
+             point of interest), the right hand's Two Bone IK on the lever (weighted by the clip's HandIK
+             curve, so it needs no script), the sword trail from the clip's Trail curve. The jump leaves the
+             ground on the clip's Takeoff event, through the public method of that name.
+             </summary>
+        </member>
+        <member name="P:AnimationSample.HeroController.StateLine">
+            <summary>Read by the HUD.</summary>
+        </member>
+        <member name="M:AnimationSample.HeroController.TeleportTo(Vector3,System.Single)">
+            <summary>
+            Puts the hero at a point facing a yaw (degrees), stopped - for tours and automated checks.
+            </summary>
+        </member>
+        <member name="M:AnimationSample.HeroController.TryPullLever">
+            <summary>Starts the lever pull as E does, when the hero stands in reach.</summary>
+        </member>
+        <member name="M:AnimationSample.HeroController.Takeoff">
+            <summary>Called by the Takeoff event of the jump clip: the feet leave the ground now.</summary>
+        </member>
+        <member name="T:AnimationSample.LayerStation">
+            <summary>
+            Layers. The barbarian walks on the base layer; an override layer masked to the spine and
+            everything above it (arms, head) plays cheer / block / spellcast / interact on top, while its
+            weight swings between 0 and 1 to show the blend; an additive layer adds hit flinches over
+            whatever is playing. Both upper layers rest in an empty state, which fades them out.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.LeverStation">
+            <summary>
+            The lever the hero pulls with E. The pick-up clip reaches forward; the hero's right-hand Two Bone
+            IK (target: the lever grip, weight curve "HandIK") pulls the hand onto the grip exactly while the
+            clip's curve is up, and the clip's "Grab" event throws the lever, which switches the lamps.
+            </summary>
+        </member>
+        <member name="M:AnimationSample.LeverStation.Pull">
+            <summary>Throws the lever (called on the clip's Grab event).</summary>
+        </member>
+        <member name="T:AnimationSample.LookAtStation">
+            <summary>
+            Look-at. Three characters follow the hero with Look At IK on their head bone: head only, head +
+            chest, and head + chest + spine with a small share for the lower bones. Each bone turns at most
+            Max Bone Angle from its animated facing, and the look fades out when the hero walks behind them
+            (Max Turn Angle) instead of twisting the neck round.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.Orbiter">
+            <summary>
+            Moves its entity on a figure-eight (or a circle) around where it starts, with an optional bob -
+            moving targets for the IK exhibits and the swinging spring-bone collider.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.PathWalker">
+            <summary>
+            Walks a character back and forth along waypoints (the children of Path) over uneven ground,
+            keeping its root on the ground with a ray cast and feeding Speed to its walk blend space. Its
+            Foot IK (when it has one and it is enabled) then plants each foot on the steps and the slope.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.Pendulum">
+            <summary>Swings its entity around its local X or Z axis like a pendulum.</summary>
+        </member>
+        <member name="T:AnimationSample.RetargetStation">
+            <summary>
+            One clip, five skeletons. Every few seconds the next clip crossfades in on all characters at once
+            from script (AnimationComponent.Blend, no controller). The UAL1 rig plays its own clips by copy;
+            the others are Rest Aligned: each bone turns by what its source bone turned from its rest pose,
+            motion scales with hip height, and bones named differently (Rigify, KayKit) are matched by
+            humanoid role. The clips come from three source rigs, so every rig plays clips made for others.
+            </summary>
+        </member>
+        <member name="F:AnimationSample.RetargetStation.Clips">
+            Clip key and the rig it was made for.
+        </member>
+        <member name="T:AnimationSample.SpellCaster">
+            <summary>
+            Curves and events driving gameplay. The mage's controller runs raise - charge - release -
+            channel on a Cast trigger; every one of those clips carries a "Glow" curve, read each frame with
+            GetCurve to drive the staff light and the orb's emission, and the release clip's "Cast" event
+            fires the burst and the sound at the exact frame the staff swings.
+            </summary>
+        </member>
+        <member name="P:AnimationSample.SpellCaster.Glow">
+            <summary>Last Glow value, for the station's status line.</summary>
+        </member>
+        <member name="T:AnimationSample.SpringStation">
+            <summary>
+            Spring bones: secondary motion simulated on top of the animated pose. Bead strands hang from a
+            bar and part around a swinging ball (a sphere collider every strand knows), lanterns sway under a
+            turning beam, and the hero's charm swings as it runs. Stiffness pulls each joint back to its
+            animated direction, damping bleeds speed, gravity drags it down.
+            </summary>
+        </member>
+        <member name="T:AnimationSample.StationRegistry">
+            <summary>Every station of the gallery, for the HUD and the hero's look-at.</summary>
+        </member>
+        <member name="M:AnimationSample.StationRegistry.FindAt(Vector3)">
+            <summary>The station whose area contains <paramref name="position"/>, the closest one first.</summary>
+        </member>
+        <member name="T:AnimationSample.Station">
+            <summary>
+            One exhibit of the gallery: its name, what it demonstrates, and a live status line the HUD shows
+            while the hero stands in its area. Exhibits with behavior derive from it.
+            </summary>
+        </member>
+        <member name="M:AnimationSample.Station.GetStatus">
+            <summary>Live values for the HUD, one per line.</summary>
+        </member>
+        <member name="M:AnimationSample.Station.GetFocusPosition">
+            <summary>World position of the focus point, or the station center a little above the floor.</summary>
+        </member>
+        <member name="T:AnimationSample.ThirdPersonCamera">
+            <summary>
+            Orbit camera around the hero: the mouse turns it, the wheel zooms, and while the hero aims it
+            moves in over the right shoulder. A sphere cast keeps it in front of walls.
+            </summary>
+        </member>
+        <member name="P:AnimationSample.ThirdPersonCamera.Aiming">
+            <summary>Set by the hero while it aims.</summary>
+        </member>
+    </members>
+</doc>

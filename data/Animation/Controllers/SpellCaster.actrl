@@ -1,0 +1,198 @@
+{
+ "animation_controller": {
+  "parameters": [
+   {
+    "name": "Cast",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   }
+  ],
+  "layers": [
+   {
+    "name": "Base",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [],
+    "default_state": "Idle",
+    "states": [
+     {
+      "name": "Idle",
+      "motion": 0,
+      "clip": {
+       "uid": "aa757509-46e2-7c4b-98bb-55951d489790"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Raise",
+      "motion": 0,
+      "clip": {
+       "uid": "1e3d3995-0157-bf4d-b094-447b1dacf957"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 260.0,
+       "y": -100.0
+      }
+     },
+     {
+      "name": "Charge",
+      "motion": 0,
+      "clip": {
+       "uid": "a649bf52-df08-6e4f-b43d-778f81ad285c"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 520.0,
+       "y": -100.0
+      }
+     },
+     {
+      "name": "Release",
+      "motion": 0,
+      "clip": {
+       "uid": "205ead2f-2848-de4a-9143-687817955d9d"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 520.0,
+       "y": 80.0
+      }
+     },
+     {
+      "name": "Channel",
+      "motion": 0,
+      "clip": {
+       "uid": "99a7d400-b169-794e-8e84-14e18b6e244a"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 260.0,
+       "y": 160.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "Idle",
+      "destination": "Raise",
+      "conditions": [
+       {
+        "parameter": "Cast",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Raise",
+      "destination": "Charge",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.949999988079071,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Charge",
+      "destination": "Release",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Release",
+      "destination": "Channel",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Channel",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 2.0,
+      "duration": 0.3499999940395355,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   }
+  ],
+  "preview_model": {
+   "uid": "5fb41121-b809-494a-9e7a-06e1936a4a37"
+  }
+ }
+}

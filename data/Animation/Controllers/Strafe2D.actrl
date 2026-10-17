@@ -1,0 +1,117 @@
+{
+ "animation_controller": {
+  "parameters": [
+   {
+    "name": "MoveX",
+    "type": 0,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "MoveY",
+    "type": 0,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   }
+  ],
+  "layers": [
+   {
+    "name": "Base",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [],
+    "default_state": "Move",
+    "states": [
+     {
+      "name": "Move",
+      "motion": 3,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "MoveX",
+      "parameter_y": "MoveY",
+      "points": [
+       {
+        "clip": {
+         "uid": "aa757509-46e2-7c4b-98bb-55951d489790"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "064dcddd-8802-024f-9fba-f82e8580edb5"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 1.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "535ff620-69d4-e247-88e8-a21135e1a92c"
+        },
+        "position": {
+         "x": 0.0,
+         "y": -1.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "fd3c557e-8dbc-db45-9d4f-8ef3afe1344d"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 2.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "ac2befb6-af15-2c4b-9d24-9f9203fa46a6"
+        },
+        "position": {
+         "x": -2.0,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "15d4e5cd-c2d4-7547-83d7-821e81160a0f"
+        },
+        "position": {
+         "x": 2.0,
+         "y": 0.0
+        }
+       }
+      ],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     }
+    ],
+    "transitions": [],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   }
+  ],
+  "preview_model": {
+   "uid": "c5e502e9-2890-3046-b8a2-022e0b9ecde0"
+  }
+ }
+}

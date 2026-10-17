@@ -1,0 +1,44 @@
+{
+ "meta": {
+  "type": ".anim",
+  "uid": "064dcddd-8802-024f-9fba-f82e8580edb5",
+  "importer": {
+   "polymorphic_id": 2147483649,
+   "polymorphic_name": "animation_importer_meta",
+   "ptr_wrapper": {
+    "id": 2147483649,
+    "data": {
+     "base_type": {},
+     "root_motion": {
+      "keep_position_y": true,
+      "keep_position_xz": false,
+      "keep_rotation": false,
+      "keep_in_place": false
+     },
+     "events": [
+      {
+       "name": "Footstep",
+       "position": 0.4729999899864197,
+       "string_parameter": "right",
+       "float_parameter": 0.0,
+       "int_parameter": 0,
+       "min_weight": 0.5
+      },
+      {
+       "name": "Footstep",
+       "position": 0.9710000157356262,
+       "string_parameter": "left",
+       "float_parameter": 0.0,
+       "int_parameter": 0,
+       "min_weight": 0.5
+      }
+     ],
+     "curves": []
+    }
+   }
+  },
+  "header": {
+   "polymorphic_id": 0
+  }
+ }
+}

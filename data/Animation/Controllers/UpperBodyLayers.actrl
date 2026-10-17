@@ -1,0 +1,385 @@
+{
+ "animation_controller": {
+  "parameters": [
+   {
+    "name": "UpperState",
+    "type": 1,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Hit",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Speed",
+    "type": 0,
+    "default_float": 1.0,
+    "default_int": 0,
+    "default_bool": false
+   }
+  ],
+  "layers": [
+   {
+    "name": "Base",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [],
+    "default_state": "Walk",
+    "states": [
+     {
+      "name": "Walk",
+      "motion": 1,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "Speed",
+      "parameter_y": "",
+      "points": [
+       {
+        "clip": {
+         "uid": "aa757509-46e2-7c4b-98bb-55951d489790"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "064dcddd-8802-024f-9fba-f82e8580edb5"
+        },
+        "position": {
+         "x": 1.0,
+         "y": 0.0
+        }
+       }
+      ],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     }
+    ],
+    "transitions": [],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   },
+   {
+    "name": "UpperBody",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [
+     {
+      "bone": "spine",
+      "weight": 1.0,
+      "include_children": true
+     }
+    ],
+    "default_state": "None",
+    "states": [
+     {
+      "name": "None",
+      "motion": 0,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Cheer",
+      "motion": 0,
+      "clip": {
+       "uid": "289f87a3-9b1f-c644-84ee-1ae27ab1b637"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Block",
+      "motion": 0,
+      "clip": {
+       "uid": "009a2520-1735-b24d-a450-5d3ee8292185"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 560.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Cast",
+      "motion": 0,
+      "clip": {
+       "uid": "99a7d400-b169-794e-8e84-14e18b6e244a"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 160.0
+      }
+     },
+     {
+      "name": "Interact",
+      "motion": 0,
+      "clip": {
+       "uid": "a65fade7-dd77-ae4b-b8df-872faa9c5d7e"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 160.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "",
+      "destination": "None",
+      "conditions": [
+       {
+        "parameter": "UpperState",
+        "mode": 2,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "",
+      "destination": "Cheer",
+      "conditions": [
+       {
+        "parameter": "UpperState",
+        "mode": 2,
+        "threshold": 1.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "",
+      "destination": "Block",
+      "conditions": [
+       {
+        "parameter": "UpperState",
+        "mode": 2,
+        "threshold": 2.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "",
+      "destination": "Cast",
+      "conditions": [
+       {
+        "parameter": "UpperState",
+        "mode": 2,
+        "threshold": 3.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "",
+      "destination": "Interact",
+      "conditions": [
+       {
+        "parameter": "UpperState",
+        "mode": 2,
+        "threshold": 4.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   },
+   {
+    "name": "Reactions",
+    "weight": 1.0,
+    "blend_mode": 1,
+    "mask": [],
+    "default_state": "None",
+    "states": [
+     {
+      "name": "None",
+      "motion": 0,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Hit",
+      "motion": 0,
+      "clip": {
+       "uid": "7d2739d7-964d-7747-a937-942086538914"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 0.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "",
+      "destination": "Hit",
+      "conditions": [
+       {
+        "parameter": "Hit",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.05000000074505806,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": true
+     },
+     {
+      "source": "Hit",
+      "destination": "None",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   }
+  ],
+  "preview_model": {
+   "uid": "8537cce1-fefb-784e-bf7f-bca9a70948ff"
+  }
+ }
+}

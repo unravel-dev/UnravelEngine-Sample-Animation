@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Crowd Benchmark HUD</title>
+    <link type="text/rcss" href="engine:/data/ui/rml.rcss"/>
+    <link type="text/rcss" href="app:/data/UI/Hud.rcss"/>
+    <link type="text/rcss" href="app:/data/UI/CrowdHud.rcss"/>
+</head>
+<body data-model="crowd">
+    <div id="brand" class="panel">
+        <div id="brand-title">CROWD BENCHMARK</div>
+        <div id="brand-sub">Every character: 3-layer Hero controller, foot IK, look-at IK</div>
+    </div>
+
+    <div id="help" class="panel" data-class-shown="helpShown">
+        <div class="caption">CONTROLS <span class="key">F1</span></div>
+        <div class="row"><span class="key">Up / Down</span><span class="what">double / halve the crowd</span></div>
+        <div class="row"><span class="key">Right / Left</span><span class="what">25 more / fewer</span></div>
+        <div class="row"><span class="key">I</span><span class="what">IK rigs on / off</span></div>
+        <div class="row dim">The editor's Profiler shows the cost: Animation/System Update, Animation/Update Poses, Animation/Rig Modifiers.</div>
+    </div>
+
+    <div id="crowd" class="panel">
+        <div class="caption">CROWD</div>
+        <div id="crowd-count">{{ count }}<span class="dim"> characters</span></div>
+        <div class="crowd-row">{{ frame }}</div>
+        <div class="crowd-row"><span class="dim">IK rigs </span>{{ rigs }}</div>
+    </div>
+</body>
+</html>

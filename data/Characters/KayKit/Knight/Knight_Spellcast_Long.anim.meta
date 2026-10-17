@@ -1,0 +1,72 @@
+{
+ "meta": {
+  "type": ".anim",
+  "uid": "a649bf52-df08-6e4f-b43d-778f81ad285c",
+  "importer": {
+   "polymorphic_id": 2147483649,
+   "polymorphic_name": "animation_importer_meta",
+   "ptr_wrapper": {
+    "id": 2147483649,
+    "data": {
+     "base_type": {},
+     "root_motion": {
+      "keep_position_y": true,
+      "keep_position_xz": false,
+      "keep_rotation": false,
+      "keep_in_place": false
+     },
+     "events": [],
+     "curves": [
+      {
+       "name": "Glow",
+       "curve": {
+        "linked": true,
+        "channels": {
+         "value0": {
+          "keys": [
+           {
+            "position": 0.0,
+            "value": 0.0,
+            "in_tangent": 0.0,
+            "out_tangent": 0.0,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 0.699999988079071,
+            "value": 1.0,
+            "in_tangent": 1.1764705181121827,
+            "out_tangent": 1.1764705181121827,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 0.8500000238418579,
+            "value": 1.0,
+            "in_tangent": -2.6666665077209474,
+            "out_tangent": -2.6666665077209474,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 1.0,
+            "value": 0.20000000298023225,
+            "in_tangent": 0.0,
+            "out_tangent": 0.0,
+            "interpolation": 1,
+            "tangent_mode": 0
+           }
+          ]
+         }
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  "header": {
+   "polymorphic_id": 0
+  }
+ }
+}

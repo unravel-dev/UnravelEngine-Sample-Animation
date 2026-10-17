@@ -1,0 +1,1317 @@
+{
+ "animation_controller": {
+  "parameters": [
+   {
+    "name": "Speed",
+    "type": 0,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Crouch",
+    "type": 0,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Grounded",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": true
+   },
+   {
+    "name": "Jump",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Roll",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Attack",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Interact",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Dance",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Aim",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "AimPitch",
+    "type": 0,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Shoot",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Reload",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Hit",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "HitKind",
+    "type": 1,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   }
+  ],
+  "layers": [
+   {
+    "name": "Base",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [],
+    "default_state": "Locomotion",
+    "states": [
+     {
+      "name": "Locomotion",
+      "motion": 2,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "Speed",
+      "parameter_y": "Crouch",
+      "points": [
+       {
+        "clip": {
+         "uid": "83e9a721-abe9-e84d-b98a-04c49b9f8996"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "aa02178e-f7a5-6f4a-accc-eaa22dd25da3"
+        },
+        "position": {
+         "x": 1.600000023841858,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "1865fbde-1afe-924b-84c6-2463a00d1dcd"
+        },
+        "position": {
+         "x": 3.5999999046325685,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "e673db98-48dd-ca4d-8cd1-cc18bedf042e"
+        },
+        "position": {
+         "x": 6.199999809265137,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "c7626c8d-28cb-814c-aa29-5eb485d0b752"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 1.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "c6d9d77a-d078-5f47-abcd-c5340c8ad772"
+        },
+        "position": {
+         "x": 1.600000023841858,
+         "y": 1.0
+        }
+       }
+      ],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "JumpStart",
+      "motion": 0,
+      "clip": {
+       "uid": "ecf21e4c-2301-2549-a21a-a2c35d63a4f7"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Air",
+      "editor_position": {
+       "x": 300.0,
+       "y": -200.0
+      }
+     },
+     {
+      "name": "JumpLoop",
+      "motion": 0,
+      "clip": {
+       "uid": "dd2dec92-52ea-054a-a668-7005736b9d54"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "Air",
+      "editor_position": {
+       "x": 560.0,
+       "y": -200.0
+      }
+     },
+     {
+      "name": "JumpLand",
+      "motion": 0,
+      "clip": {
+       "uid": "e5b78090-9f4e-094e-839f-2440b31ecd74"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 560.0,
+       "y": -60.0
+      }
+     },
+     {
+      "name": "Roll",
+      "motion": 0,
+      "clip": {
+       "uid": "4d9636e9-e549-cc49-bba0-72f1583300ba"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.149999976158142,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": 402.19879150390627,
+       "y": 86.19573974609375
+      }
+     },
+     {
+      "name": "Slash",
+      "motion": 0,
+      "clip": {
+       "uid": "bb9e6185-8fe8-694e-a4a6-43dea5ea828d"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.25,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": -300.0,
+       "y": 430.0
+      }
+     },
+     {
+      "name": "SwordA",
+      "motion": 0,
+      "clip": {
+       "uid": "12c55986-ebb2-c148-88b9-d803a81eccb4"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": -40.0,
+       "y": 300.0
+      }
+     },
+     {
+      "name": "SwordARec",
+      "motion": 0,
+      "clip": {
+       "uid": "06b91016-51f1-8b45-9eb0-f6c6c655d89c"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": -40.0,
+       "y": 430.0
+      }
+     },
+     {
+      "name": "SwordB",
+      "motion": 0,
+      "clip": {
+       "uid": "aed25701-5ad3-884c-81cc-5fd2f823efbb"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": 220.0,
+       "y": 300.0
+      }
+     },
+     {
+      "name": "SwordBRec",
+      "motion": 0,
+      "clip": {
+       "uid": "64eea218-6478-a24b-a9ae-3c901b7dd34f"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 220.0,
+       "y": 430.0
+      }
+     },
+     {
+      "name": "SwordC",
+      "motion": 0,
+      "clip": {
+       "uid": "aed6bc20-65ac-3b40-b813-b018b883d155"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": 480.0,
+       "y": 300.0
+      }
+     },
+     {
+      "name": "PickUp",
+      "motion": 0,
+      "clip": {
+       "uid": "cd9b7ecb-b7e0-1f40-bdfa-5d2460c7f136"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": -320.0,
+       "y": 260.0
+      }
+     },
+     {
+      "name": "Dance",
+      "motion": 0,
+      "clip": {
+       "uid": "d8669b4b-3e02-5e4d-8067-21ccd5d25cee"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": -320.0,
+       "y": -160.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "Locomotion",
+      "destination": "JumpStart",
+      "conditions": [
+       {
+        "parameter": "Jump",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "JumpLoop",
+      "conditions": [
+       {
+        "parameter": "Grounded",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "JumpStart",
+      "destination": "JumpLand",
+      "conditions": [
+       {
+        "parameter": "Grounded",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.3499999940395355,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "JumpStart",
+      "destination": "JumpLoop",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "JumpLoop",
+      "destination": "JumpLand",
+      "conditions": [
+       {
+        "parameter": "Grounded",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.05999999865889549,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "JumpLand",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Speed",
+        "mode": 0,
+        "threshold": 0.6000000238418579
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.18000000715255738,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "JumpLand",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.550000011920929,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "Roll",
+      "conditions": [
+       {
+        "parameter": "Roll",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Roll",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8199999928474426,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "Slash",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Slash",
+      "destination": "SwordA",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.41999998688697817,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Slash",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Speed",
+        "mode": 0,
+        "threshold": 0.5
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.44999998807907107,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Slash",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.800000011920929,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordA",
+      "destination": "SwordB",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.6000000238418579,
+      "duration": 0.05999999865889549,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordA",
+      "destination": "SwordARec",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9800000190734863,
+      "duration": 0.05000000074505806,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordARec",
+      "destination": "SwordB",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordARec",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Speed",
+        "mode": 0,
+        "threshold": 0.5
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordARec",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8500000238418579,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordB",
+      "destination": "SwordC",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.6000000238418579,
+      "duration": 0.05999999865889549,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordB",
+      "destination": "SwordBRec",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9800000190734863,
+      "duration": 0.05000000074505806,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordBRec",
+      "destination": "SwordC",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordBRec",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Speed",
+        "mode": 0,
+        "threshold": 0.5
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordBRec",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8500000238418579,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordC",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Speed",
+        "mode": 0,
+        "threshold": 0.5
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.699999988079071,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordC",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "PickUp",
+      "conditions": [
+       {
+        "parameter": "Interact",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "PickUp",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "Dance",
+      "conditions": [
+       {
+        "parameter": "Dance",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.3499999940395355,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Dance",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Dance",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.30000001192092898,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Dance",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Speed",
+        "mode": 0,
+        "threshold": 0.5
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -300.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -300.0,
+     "y": 120.0
+    }
+   },
+   {
+    "name": "UpperBody",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [
+     {
+      "bone": "spine_01",
+      "weight": 1.0,
+      "include_children": true
+     }
+    ],
+    "default_state": "None",
+    "states": [
+     {
+      "name": "None",
+      "motion": 0,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Aim",
+      "motion": 1,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "AimPitch",
+      "parameter_y": "",
+      "points": [
+       {
+        "clip": {
+         "uid": "62a1d463-473e-1245-8e71-821d922fe809"
+        },
+        "position": {
+         "x": -1.0,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "e845f769-62a1-cd40-b685-045032518266"
+        },
+        "position": {
+         "x": 0.0,
+         "y": 0.0
+        }
+       },
+       {
+        "clip": {
+         "uid": "64684f99-3518-ee45-a4c7-53d4abda2bec"
+        },
+        "position": {
+         "x": 1.0,
+         "y": 0.0
+        }
+       }
+      ],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Shoot",
+      "motion": 0,
+      "clip": {
+       "uid": "9a27d896-87ae-7c47-a4f5-477580c68c5f"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 560.0,
+       "y": -80.0
+      }
+     },
+     {
+      "name": "Reload",
+      "motion": 0,
+      "clip": {
+       "uid": "c562acfb-2b28-c444-b679-e11d22a11f1c"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 560.0,
+       "y": 80.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "None",
+      "destination": "Aim",
+      "conditions": [
+       {
+        "parameter": "Aim",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Aim",
+      "destination": "None",
+      "conditions": [
+       {
+        "parameter": "Aim",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Aim",
+      "destination": "Shoot",
+      "conditions": [
+       {
+        "parameter": "Shoot",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.03999999910593033,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Shoot",
+      "destination": "Aim",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8500000238418579,
+      "duration": 0.11999999731779099,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Aim",
+      "destination": "Reload",
+      "conditions": [
+       {
+        "parameter": "Reload",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Reload",
+      "destination": "Aim",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9200000166893005,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Shoot",
+      "destination": "None",
+      "conditions": [
+       {
+        "parameter": "Aim",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Reload",
+      "destination": "None",
+      "conditions": [
+       {
+        "parameter": "Aim",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   },
+   {
+    "name": "Reactions",
+    "weight": 1.0,
+    "blend_mode": 1,
+    "mask": [],
+    "default_state": "None",
+    "states": [
+     {
+      "name": "None",
+      "motion": 0,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "HitChest",
+      "motion": 0,
+      "clip": {
+       "uid": "b7e686a6-4d51-514d-b8e4-31625f8cbb77"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": -80.0
+      }
+     },
+     {
+      "name": "HitHead",
+      "motion": 0,
+      "clip": {
+       "uid": "2144aeba-31e7-5c44-bb60-31654bda1b4f"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 80.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "",
+      "destination": "HitChest",
+      "conditions": [
+       {
+        "parameter": "Hit",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "HitKind",
+        "mode": 2,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.05000000074505806,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": true
+     },
+     {
+      "source": "",
+      "destination": "HitHead",
+      "conditions": [
+       {
+        "parameter": "Hit",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "HitKind",
+        "mode": 2,
+        "threshold": 1.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.05000000074505806,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": true
+     },
+     {
+      "source": "HitChest",
+      "destination": "None",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "HitHead",
+      "destination": "None",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   }
+  ],
+  "preview_model": {
+   "uid": "216690d9-3619-b146-953a-2acbc4ee04d7"
+  }
+ }
+}

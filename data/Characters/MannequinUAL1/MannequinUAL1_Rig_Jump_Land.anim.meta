@@ -1,0 +1,36 @@
+{
+ "meta": {
+  "type": ".anim",
+  "uid": "e5b78090-9f4e-094e-839f-2440b31ecd74",
+  "importer": {
+   "polymorphic_id": 2147483649,
+   "polymorphic_name": "animation_importer_meta",
+   "ptr_wrapper": {
+    "id": 2147483649,
+    "data": {
+     "base_type": {},
+     "root_motion": {
+      "keep_position_y": true,
+      "keep_position_xz": false,
+      "keep_rotation": false,
+      "keep_in_place": true
+     },
+     "events": [
+      {
+       "name": "Land",
+       "position": 0.06300000101327896,
+       "string_parameter": "",
+       "float_parameter": 0.0,
+       "int_parameter": 0,
+       "min_weight": 0.5
+      }
+     ],
+     "curves": []
+    }
+   }
+  },
+  "header": {
+   "polymorphic_id": 0
+  }
+ }
+}

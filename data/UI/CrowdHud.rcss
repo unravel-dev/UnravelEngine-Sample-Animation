@@ -1,0 +1,30 @@
+/* The crowd benchmark's own panels; fonts, panels, captions and keys come from Hud.rcss. */
+
+#help .row.dim {
+	font-size: 12dp;
+	line-height: 17dp;
+	margin-top: 10dp;
+}
+
+#crowd {
+	right: 20dp;
+	top: 18dp;
+	width: 240dp;
+}
+
+#crowd-count {
+	font-weight: 800;
+	font-size: 30dp;
+	color: #ffffff;
+}
+
+#crowd-count .dim {
+	font-weight: 400;
+	font-size: 14dp;
+}
+
+.crowd-row {
+	display: block;
+	margin-top: 4dp;
+	font-size: 14dp;
+}

@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Animation Gallery HUD</title>
+    <link type="text/rcss" href="engine:/data/ui/rml.rcss"/>
+    <link type="text/rcss" href="app:/data/UI/Hud.rcss"/>
+</head>
+<body data-model="gallery">
+    <div id="brand" class="panel">
+        <div id="brand-title">ANIMATION GALLERY</div>
+        <div id="brand-sub">Unravel Engine sample - walk to an exhibit</div>
+    </div>
+
+    <div id="help" class="panel" data-class-shown="helpShown">
+        <div class="caption">CONTROLS <span class="key">F1</span></div>
+        <div class="row"><span class="key">W A S D</span><span class="what">move (camera relative)</span></div>
+        <div class="row"><span class="key">Mouse</span><span class="what">look   <span class="dim">wheel: zoom</span></span></div>
+        <div class="row"><span class="key">Shift</span><span class="what">sprint   <span class="dim">Ctrl: walk</span></span></div>
+        <div class="row"><span class="key">Space</span><span class="what">jump (leaves on the Takeoff event)</span></div>
+        <div class="row"><span class="key">C</span><span class="what">crouch (2D blend space)</span></div>
+        <div class="row"><span class="key">Q</span><span class="what">roll (root motion)</span></div>
+        <div class="row"><span class="key">LMB</span><span class="what">slash; keep tapping: 4-hit combo (root motion)</span></div>
+        <div class="row"><span class="key">RMB</span><span class="what">aim (masked upper-body layer)</span></div>
+        <div class="row"><span class="key">RMB + LMB / R</span><span class="what">shoot / reload</span></div>
+        <div class="row"><span class="key">H</span><span class="what">hit reaction (additive layer)</span></div>
+        <div class="row"><span class="key">E</span><span class="what">pull the lever (hand IK)</span></div>
+        <div class="row"><span class="key">G</span><span class="what">dance</span></div>
+    </div>
+
+    <div id="station" class="panel" data-class-shown="stationShown">
+        <div id="station-title">{{ stationTitle }}</div>
+        <div id="station-description">{{ stationDescription }}</div>
+        <div id="station-status">{{ stationStatus }}</div>
+    </div>
+
+    <div id="feed" class="panel" data-class-shown="hasEvents">
+        <div class="caption">ANIMATION EVENTS</div>
+        <div class="event" data-for="e : events" data-class-fresh="e.fresh">
+            <span class="event-time">{{ e.time }}</span>
+            <span class="event-source">{{ e.source }}</span>
+            <span class="event-name">{{ e.name }}</span>
+            <div class="event-detail">{{ e.detail }}</div>
+        </div>
+    </div>
+
+    <div id="hero-state" class="panel">
+        <span class="caption">HERO</span>
+        <span id="hero-speed">{{ heroSpeed }}</span>
+        <div id="hero-layers">{{ heroState }}</div>
+    </div>
+</body>
+</html>

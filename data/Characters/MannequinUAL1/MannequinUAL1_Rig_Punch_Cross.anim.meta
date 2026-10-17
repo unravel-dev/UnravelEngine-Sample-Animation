@@ -1,0 +1,36 @@
+{
+ "meta": {
+  "type": ".anim",
+  "uid": "8231ed00-a4d8-604a-a790-64e3351e7fc3",
+  "importer": {
+   "polymorphic_id": 2147483649,
+   "polymorphic_name": "animation_importer_meta",
+   "ptr_wrapper": {
+    "id": 2147483649,
+    "data": {
+     "base_type": {},
+     "root_motion": {
+      "keep_position_y": true,
+      "keep_position_xz": false,
+      "keep_rotation": false,
+      "keep_in_place": false
+     },
+     "events": [
+      {
+       "name": "Swing",
+       "position": 0.16699999570846559,
+       "string_parameter": "cross",
+       "float_parameter": 0.0,
+       "int_parameter": 0,
+       "min_weight": 0.5
+      }
+     ],
+     "curves": []
+    }
+   }
+  },
+  "header": {
+   "polymorphic_id": 0
+  }
+ }
+}

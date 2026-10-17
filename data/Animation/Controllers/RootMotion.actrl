@@ -1,0 +1,172 @@
+{
+ "animation_controller": {
+  "parameters": [],
+  "layers": [
+   {
+    "name": "Base",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [],
+    "default_state": "Idle",
+    "states": [
+     {
+      "name": "Idle",
+      "motion": 0,
+      "clip": {
+       "uid": "bdd84fd9-46a7-8142-b43a-3f686518ba8c"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "ClimbUp",
+      "motion": 0,
+      "clip": {
+       "uid": "954a5e6d-2305-4844-86d8-4d4682747a24"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": -160.0
+      }
+     },
+     {
+      "name": "SwordDash",
+      "motion": 0,
+      "clip": {
+       "uid": "a68bb655-e60f-934e-8e1a-46ddd01f7882"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": -40.0
+      }
+     },
+     {
+      "name": "ShieldDash",
+      "motion": 0,
+      "clip": {
+       "uid": "86d3a58f-3c30-d740-a740-0cc8e5987946"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 80.0
+      }
+     },
+     {
+      "name": "Knockback",
+      "motion": 0,
+      "clip": {
+       "uid": "7ce63510-b49a-2e41-8ea3-f813e7e3f19e"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 200.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "ClimbUp",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9599999785423279,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordDash",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9599999785423279,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "ShieldDash",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9599999785423279,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Knockback",
+      "destination": "Idle",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.9599999785423279,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   }
+  ],
+  "preview_model": {
+   "uid": "216690d9-3619-b146-953a-2acbc4ee04d7"
+  }
+ }
+}

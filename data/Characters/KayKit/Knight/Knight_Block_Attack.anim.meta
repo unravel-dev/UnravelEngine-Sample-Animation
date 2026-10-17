@@ -1,0 +1,36 @@
+{
+ "meta": {
+  "type": ".anim",
+  "uid": "d8c3796e-691f-504f-8470-69e21c5481b7",
+  "importer": {
+   "polymorphic_id": 2147483649,
+   "polymorphic_name": "animation_importer_meta",
+   "ptr_wrapper": {
+    "id": 2147483649,
+    "data": {
+     "base_type": {},
+     "root_motion": {
+      "keep_position_y": true,
+      "keep_position_xz": false,
+      "keep_rotation": false,
+      "keep_in_place": false
+     },
+     "events": [
+      {
+       "name": "Hit",
+       "position": 0.4020000100135803,
+       "string_parameter": "bash",
+       "float_parameter": 0.5,
+       "int_parameter": 0,
+       "min_weight": 0.5
+      }
+     ],
+     "curves": []
+    }
+   }
+  },
+  "header": {
+   "polymorphic_id": 0
+  }
+ }
+}
