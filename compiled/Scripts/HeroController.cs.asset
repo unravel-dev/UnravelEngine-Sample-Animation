@@ -7,17 +7,18 @@ namespace AnimationSample
     ///
     /// Movement goes through the character controller; the animation controller (Hero.actrl) only gets
     /// parameters - Speed / Crouch for the 2D locomotion blend space, Grounded, triggers for jump, roll,
-    /// the sword combo, pick-up and hit reactions, Aim / AimPitch for the masked upper-body layer. The
+    /// dash, the sword combo, pick-up and hit reactions, Aim / AimPitch for the masked upper-body layer. The
     /// state machine decides; this script reads it back (IsInTag "Busy") to stop steering mid-attack.
     ///
-    /// Root motion is on: the sword attacks, their recoveries and the roll carry their own travel, which
+    /// Root motion is on: the sword attacks, their recoveries, the roll and the dash carry their own travel, which
     /// the animation system moves through the character controller (so it still collides). Clips the
     /// script moves itself - locomotion, jumps, interactions - are imported "Keep In Place". While a
     /// Busy state plays the script adds no velocity of its own.
     ///
-    /// Rig modifiers it drives: Foot IK (weight 0 in the air), the head's Look At IK (target: the nearest
-    /// point of interest), the right hand's Two Bone IK on the lever (weighted by the clip's HandIK
-    /// curve, so it needs no script), the sword trail from the clip's Trail curve. The jump leaves the
+    /// Rig modifiers it drives: Foot IK (weight 0 in the air), the head's Look At IK (target: a character
+    /// of the station around the hero, marked by the look marker), the left hand's Two Bone IK on the
+    /// lever (weighted by the clip's HandIK curve, so it needs no script), the sword trail from the
+    /// clip's Trail curve. The jump leaves the
     /// ground on the clip's Takeoff event, through the public method of that name.
     /// </summary>
     [ScriptSourceFile]
@@ -40,26 +41,44 @@ namespace AnimationSample
 
         [Header("Scene")]
         public Entity Camera;
-        [Tooltip("Free entity the head's Look At IK targets; moved to the nearest point of interest.")]
+        [Tooltip("Free entity the head's Look At IK targets; moved to what the station around the hero shows.")]
         public Entity LookTarget;
+        [Tooltip("Marker (a child of LookTarget) hovering over what the hero looks at, shown while it looks.")]
+        public Entity LookMarker;
         public Entity Sword;
         public Entity Crossbow;
-        [Tooltip("Particle emitter at the sword tip; its rate follows the clip's Trail curve.")]
+        [Tooltip("The sword's slash trail: every particle emitter at or under it (the sheet across the blade, the tip's edge) emits at the rate the clip's Trail curve sets.")]
         public Entity SwordTrail;
         [Tooltip("Particle emitter (world space) for muzzle sparks and hit sparks.")]
         public Entity Sparks;
-        [Tooltip("The lever the hero can pull with E.")]
+        [Tooltip("The lever the hero can pull with F.")]
         public Entity Lever;
 
         /// <summary>Read by the HUD.</summary>
         public string StateLine { get; private set; } = "";
+
+        /// <summary>Height the hero looks from (m).</summary>
+        private const float EyeHeight = 1.6f;
+        /// <summary>Above this speed (m/s, between walk and jog) the sword arm is held in its carry pose.</summary>
+        private const float CarrySpeed = 2.2f;
+        /// <summary>How fast a glance follows a new point (1/s).</summary>
+        private const float LookFollowRate = 6.0f;
+        /// <summary>The look marker: size and gap between its center and the top of the head (m), bob
+        /// amplitude (m) and rate (rad/s), fade rate (1/s).</summary>
+        private const float MarkerSize = 0.13f;
+        private const float MarkerGap = 0.14f;
+        private const float MarkerBob = 0.03f;
+        private const float MarkerBobRate = 3.0f;
+        private const float MarkerFadeRate = 4.0f;
+        /// <summary>Slash trail points per second at a Trail curve of 1 (spread along the blade's path).</summary>
+        private const float TrailRate = 160.0f;
 
         private CharacterControllerComponent controller;
         private AnimationComponent animation;
         private FootIKComponent footIk;
         private LookAtIKComponent lookAt;
         private ThirdPersonCamera orbit;
-        private ParticleEmitterComponent trail;
+        private ParticleEmitterComponent[] trails = new ParticleEmitterComponent[0];
         private ParticleEmitterComponent sparks;
         private LeverStation lever;
         private Vector3 velocity;
@@ -71,6 +90,9 @@ namespace AnimationSample
         private bool jumpPending;
         private float jumpPendingTime;
         private int hitKind;
+        private float lookWeight;
+        private float markerFade;
+        private float markerHeight;
         private float airTime;
         private float sinceTakeoff = 10.0f;
         private bool crossbowShown = true;
@@ -94,7 +116,7 @@ namespace AnimationSample
             }
             if (SwordTrail.IsValid())
             {
-                trail = SwordTrail.GetComponent<ParticleEmitterComponent>();
+                trails = SwordTrail.GetComponentsInChildren<ParticleEmitterComponent>();
             }
             if (Sparks.IsValid())
             {
@@ -121,7 +143,7 @@ namespace AnimationSample
             bool busy = animation.IsInTag("Busy");
             HandleActions(grounded, busy);
             Move(dt, grounded, busy);
-            FeedAnimation(dt, grounded);
+            FeedAnimation(dt, grounded, busy);
             DriveRig(dt, grounded);
             StateLine = animation.GetCurrentStateName(0) + " / " + animation.GetCurrentStateName(1) + " / " +
                         animation.GetCurrentStateName(2);
@@ -129,7 +151,9 @@ namespace AnimationSample
 
         private void HandleActions(bool grounded, bool busy)
         {
-            aiming = Input.IsDown(MouseButton.Right) && grounded && !dancing;
+            // With the cursor freed (Escape) the mouse belongs to the user: a click only takes it back.
+            bool mouseFree = orbit != null && orbit.IsCursorFree;
+            aiming = !mouseFree && Input.IsDown(MouseButton.Right) && grounded && !dancing;
             if (Input.IsPressed(KeyCode.C))
             {
                 crouched = !crouched;
@@ -146,7 +170,7 @@ namespace AnimationSample
                 jumpPending = true;
                 jumpPendingTime = 0.0f;
             }
-            if (Input.IsPressed(MouseButton.Left))
+            if (!mouseFree && Input.IsPressed(MouseButton.Left))
             {
                 animation.SetTrigger(aiming ? "Shoot" : "Attack");
             }
@@ -165,6 +189,13 @@ namespace AnimationSample
                 hitKind = 1 - hitKind;
             }
             if (Input.IsPressed(KeyCode.E) && grounded && !busy)
+            {
+                // The clip's root motion carries the dash, as it does the roll.
+                crouched = false;
+                dancing = false;
+                animation.SetTrigger("Dash");
+            }
+            if (Input.IsPressed(KeyCode.F) && grounded && !busy)
             {
                 // Faces the lever so the clip's reach lines up with it; the hand IK closes the rest.
                 TryPullLever();
@@ -272,7 +303,7 @@ namespace AnimationSample
             controller.Jump(JumpSpeed);
         }
 
-        private void FeedAnimation(float dt, bool grounded)
+        private void FeedAnimation(float dt, bool grounded, bool busy)
         {
             Vector3 planar = velocity;
             planar.y = 0.0f;
@@ -284,6 +315,9 @@ namespace AnimationSample
             animation.SetBool("Grounded", grounded && !jumpPending);
             animation.SetBool("Aim", aiming);
             animation.SetBool("Dance", dancing);
+            // Running swings the sword hand up to the shoulder and the blade through the head: above a
+            // walk the SwordArm layer holds the arm in a carry pose. Attacks, aiming and the rest keep it.
+            animation.SetBool("Carry", grounded && !busy && !aiming && !dancing && planar.magnitude > CarrySpeed);
             float pitch = orbit != null ? orbit.Pitch : 0.0f;
             animation.SetFloat("AimPitch", Mathf.Clamp(-pitch / 45.0f, -1.0f, 1.0f));
             if (orbit != null)
@@ -294,26 +328,19 @@ namespace AnimationSample
 
         private void DriveRig(float dt, bool grounded)
         {
-            // Foot IK only while standing: in the air or rolling the feet follow the clip.
-            bool planted = grounded && !animation.IsInTag("Air") && !animation.IsInState("Roll") && !jumpPending;
+            // Foot IK only while standing: in the air, rolling or dashing the feet follow the clip.
+            bool planted = grounded && !animation.IsInTag("Air") && !animation.IsInState("Roll") &&
+                           !animation.IsInState("Dash") && !jumpPending;
             footWeight = Mathf.MoveTowards(footWeight, planted ? 1.0f : 0.0f, dt * 5.0f);
             if (footIk != null)
             {
                 footIk.weight = footWeight;
             }
-            if (lookAt != null && LookTarget.IsValid())
+            DriveLook(dt);
+            float trailRate = animation.GetCurve("Trail") * TrailRate;
+            foreach (var emitter in trails)
             {
-                Station station = StationRegistry.FindAt(owner.transform.position);
-                bool looking = station != null && !animation.IsInTag("Busy") && !dancing && !aiming;
-                if (looking)
-                {
-                    LookTarget.transform.position = station.GetFocusPosition();
-                }
-                lookAt.weight = looking ? 1.0f : 0.0f;
-            }
-            if (trail != null)
-            {
-                trail.emissionRate = animation.GetCurve("Trail") * 160.0f;
+                emitter.emissionRate = trailRate;
             }
             // The crossbow replaces the sword in the hand while the upper body aims.
             bool showCrossbow = aiming || animation.GetCurrentStateName(1) != "None";
@@ -328,6 +355,55 @@ namespace AnimationSample
                 {
                     Crossbow.SetActive(showCrossbow);
                 }
+            }
+        }
+
+        /// <summary>
+        /// The head's Look At IK glances at what the station around the hero shows (a character's head, else
+        /// its Focus point) while the hero is free; the look marker hovers over it meanwhile.
+        /// </summary>
+        private void DriveLook(float dt)
+        {
+            if (lookAt == null || !LookTarget.IsValid())
+            {
+                return;
+            }
+            Station station = StationRegistry.FindAt(owner.transform.position);
+            bool free = !animation.IsInTag("Busy") && !dancing && !aiming;
+            Vector3 eyes = owner.transform.position + new Vector3(0.0f, EyeHeight, 0.0f);
+            Vector3 point = Vector3.zero;
+            float headTop = 0.0f;
+            bool looking = free && station != null &&
+                           station.TryGetFocus(eyes, owner.transform.forward, out point, out headTop);
+            if (looking)
+            {
+                // A new glance starts at its point (the weight fades in); a switch eases across.
+                float follow = lookWeight > 0.0f ? 1.0f - Mathf.Exp(-LookFollowRate * dt) : 1.0f;
+                LookTarget.transform.position = Vector3.Lerp(LookTarget.transform.position, point, follow);
+                markerHeight = Mathf.Lerp(markerHeight, headTop + MarkerGap, follow);
+            }
+            lookWeight = looking ? 1.0f : 0.0f;
+            lookAt.weight = lookWeight;
+            UpdateLookMarker(dt, looking);
+        }
+
+        private void UpdateLookMarker(float dt, bool looking)
+        {
+            if (!LookMarker.IsValid())
+            {
+                return;
+            }
+            markerFade = Mathf.MoveTowards(markerFade, looking ? 1.0f : 0.0f, dt * MarkerFadeRate);
+            bool shown = markerFade > 0.0f;
+            if (LookMarker.activeLocal != shown)
+            {
+                LookMarker.SetActive(shown);
+            }
+            if (shown)
+            {
+                LookMarker.transform.localScale = Vector3.one * (MarkerSize * markerFade);
+                LookMarker.transform.localPosition =
+                    new Vector3(0.0f, markerHeight + MarkerBob * Mathf.Sin(Time.time * MarkerBobRate), 0.0f);
             }
         }
 

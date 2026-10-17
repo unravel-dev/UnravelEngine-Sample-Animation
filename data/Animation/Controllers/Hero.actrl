@@ -98,6 +98,20 @@
     "default_float": 0.0,
     "default_int": 0,
     "default_bool": false
+   },
+   {
+    "name": "Carry",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Dash",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
    }
   ],
   "layers": [
@@ -408,6 +422,25 @@
       "editor_position": {
        "x": -320.0,
        "y": -160.0
+      }
+     },
+     {
+      "name": "Dash",
+      "motion": 0,
+      "clip": {
+       "uid": "a68bb655-e60f-934e-8e1a-46ddd01f7882"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": false,
+      "cycle_offset": 0.0,
+      "tag": "Busy",
+      "editor_position": {
+       "x": 402.19879150390627,
+       "y": 156.19573974609376
       }
      }
     ],
@@ -831,8 +864,8 @@
       "destination": "Locomotion",
       "conditions": [],
       "has_exit_time": true,
-      "exit_time": 0.9200000166893005,
-      "duration": 0.25,
+      "exit_time": 0.6499999761581421,
+      "duration": 0.30000001192092898,
       "offset": 0.0,
       "phase_sync": false,
       "interruptible": false,
@@ -886,6 +919,36 @@
       ],
       "has_exit_time": false,
       "exit_time": 0.0,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "Dash",
+      "conditions": [
+       {
+        "parameter": "Dash",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Dash",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.800000011920929,
       "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
@@ -1297,6 +1360,105 @@
       "offset": 0.0,
       "phase_sync": false,
       "interruptible": false,
+      "can_transition_to_self": false
+     }
+    ],
+    "entry_position": {
+     "x": -260.0,
+     "y": 0.0
+    },
+    "any_state_position": {
+     "x": -260.0,
+     "y": 160.0
+    }
+   },
+   {
+    "name": "SwordArm",
+    "weight": 1.0,
+    "blend_mode": 0,
+    "mask": [
+     {
+      "bone": "clavicle_r",
+      "weight": 1.0,
+      "include_children": true
+     }
+    ],
+    "default_state": "Free",
+    "states": [
+     {
+      "name": "Free",
+      "motion": 0,
+      "clip": {
+       "uid": "nil"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 0.0,
+       "y": 0.0
+      }
+     },
+     {
+      "name": "Carry",
+      "motion": 0,
+      "clip": {
+       "uid": "dfdc3942-e6a1-7841-9a20-53834f909001"
+      },
+      "parameter_x": "",
+      "parameter_y": "",
+      "points": [],
+      "speed": 1.0,
+      "speed_parameter": "",
+      "loop": true,
+      "cycle_offset": 0.0,
+      "tag": "",
+      "editor_position": {
+       "x": 280.0,
+       "y": 0.0
+      }
+     }
+    ],
+    "transitions": [
+     {
+      "source": "Free",
+      "destination": "Carry",
+      "conditions": [
+       {
+        "parameter": "Carry",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.25,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Carry",
+      "destination": "Free",
+      "conditions": [
+       {
+        "parameter": "Carry",
+        "mode": 5,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.8999999761581421,
+      "duration": 0.11999999731779099,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
       "can_transition_to_self": false
      }
     ],

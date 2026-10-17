@@ -61,11 +61,11 @@
        "y": 0
       },
       "viewport_size": {
-       "width": 1344,
-       "height": 798
+       "width": 1283,
+       "height": 831
       },
       "orthographic_size": 5.0,
-      "aspect_ratio": 1.6842105388641358,
+      "aspect_ratio": 1.543923020362854,
       "aspect_locked": false,
       "frustum_locked": false
      },
@@ -101,6 +101,7 @@
        },
        "MinPitch": -30.0,
        "MaxPitch": 65.0,
+       "LockCursor": true,
        "Aiming": false
       }
      ]
@@ -19304,6 +19305,9 @@
      "children": [
       {
        "uid": "3ea774f0-8891-834f-8218-bf2859a6d278"
+      },
+      {
+       "uid": "d00ca3cd-786e-8a4c-b8f5-dceeddf8efd8"
       }
      ],
      "active": true
@@ -19372,6 +19376,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "d00ca3cd-786e-8a4c-b8f5-dceeddf8efd8",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "d00ca3cd-786e-8a4c-b8f5-dceeddf8efd8"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": -2.384185791015625e-7,
+       "y": 1.2250750064849854,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "44abdab8-5d8b-4d41-911a-3022f995d80f"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -27159,6 +27213,9 @@
      "children": [
       {
        "uid": "6eee5b82-2efa-6746-947b-599151c2a72f"
+      },
+      {
+       "uid": "82237d0c-852c-a448-a291-e82efeffbad0"
       }
      ],
      "active": true
@@ -27227,6 +27284,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "82237d0c-852c-a448-a291-e82efeffbad0",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "82237d0c-852c-a448-a291-e82efeffbad0"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.00002574920654296875,
+       "y": 1.2250746488571168,
+       "z": -0.0000057220458984375
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "fc77f293-7dc7-c94a-8791-f9efe4dad7c2"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -31524,6 +31631,9 @@
      "children": [
       {
        "uid": "b852e90c-014e-e349-9832-b33377413237"
+      },
+      {
+       "uid": "de7884ae-1fa5-6946-bda3-62112ebcd72b"
       }
      ],
      "active": true
@@ -31592,6 +31702,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "de7884ae-1fa5-6946-bda3-62112ebcd72b",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "de7884ae-1fa5-6946-bda3-62112ebcd72b"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": -0.0000133514404296875,
+       "y": 1.1563247442245484,
+       "z": -0.00006103515625
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "daa9527b-60db-5247-9ef1-351fd7b282e5"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -35561,6 +35721,9 @@
      "children": [
       {
        "uid": "1c0e2270-ebfa-3945-ad45-04216abd15f9"
+      },
+      {
+       "uid": "4dcfa5d9-a2c3-f34f-8533-75c9eb40c0a8"
       }
      ],
      "active": true
@@ -35629,6 +35792,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "4dcfa5d9-a2c3-f34f-8533-75c9eb40c0a8",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "4dcfa5d9-a2c3-f34f-8533-75c9eb40c0a8"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.00000762939453125,
+       "y": 1.7613246440887452,
+       "z": -0.0000171661376953125
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "0ed9d7c3-4e3e-d94e-b0ce-5bd601637740"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -38840,12 +39053,66 @@
      "parent": {
       "uid": "8d22bf12-c7e4-c540-a43b-d93462f073ba"
      },
-     "children": [],
+     "children": [
+      {
+       "uid": "4a787b19-693a-fa41-9140-d9b0e7f5aaa2"
+      }
+     ],
      "active": true
     },
     "has_bone_component": true,
     "bone_component": {
      "bone_index": 12
+    }
+   }
+  },
+  {
+   "uid": "4a787b19-693a-fa41-9140-d9b0e7f5aaa2",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "4a787b19-693a-fa41-9140-d9b0e7f5aaa2"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": -0.0000209808349609375,
+       "y": 1.0098246335983277,
+       "z": -0.00001239776611328125
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "6112b217-cb88-b948-a10e-4ab393b9326d"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -43281,6 +43548,9 @@
      "children": [
       {
        "uid": "6055ce1f-5ed7-c242-8b83-73e7b300bec6"
+      },
+      {
+       "uid": "302d8118-8719-0549-acf2-9c8d64711393"
       }
      ],
      "active": true
@@ -43349,6 +43619,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "302d8118-8719-0549-acf2-9c8d64711393",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "302d8118-8719-0549-acf2-9c8d64711393"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0000324249267578125,
+       "y": 1.2250746488571168,
+       "z": -0.0000057220458984375
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "1fb433ba-f466-9040-b902-33784168d640"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -46578,6 +46898,9 @@
      "children": [
       {
        "uid": "715fbc27-00d0-4d4d-b61b-1b893b646da2"
+      },
+      {
+       "uid": "d4f7a2e4-c9ca-bf4b-b847-2d374d5b8890"
       }
      ],
      "active": true
@@ -46646,6 +46969,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "d4f7a2e4-c9ca-bf4b-b847-2d374d5b8890",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "d4f7a2e4-c9ca-bf4b-b847-2d374d5b8890"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": -0.0000057220458984375,
+       "y": 1.1563245058059693,
+       "z": -0.0000629425048828125
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "95b0c4d2-20f9-fe4b-8ca9-59acd7742c22"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -70355,6 +70728,9 @@
      "children": [
       {
        "uid": "6be4519a-8217-6048-9173-4eadda2c2d84"
+      },
+      {
+       "uid": "4f385895-26b9-d74c-8de6-80b9c483f196"
       }
      ],
      "active": true
@@ -70447,6 +70823,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "4f385895-26b9-d74c-8de6-80b9c483f196",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "4f385895-26b9-d74c-8de6-80b9c483f196"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0000057220458984375,
+       "y": 1.244574785232544,
+       "z": -0.000003814697265625
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "b5d574dc-8675-5949-92a4-4a5287dcb047"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -73741,6 +74167,9 @@
      "children": [
       {
        "uid": "dffacd3a-811b-6e4f-8c37-c2dacc27cf36"
+      },
+      {
+       "uid": "8f8ed22b-74ae-aa4c-ba0b-b116ec5b3366"
       }
      ],
      "active": true
@@ -73833,6 +74262,56 @@
        "enabled": true
       }
      ]
+    }
+   }
+  },
+  {
+   "uid": "8f8ed22b-74ae-aa4c-ba0b-b116ec5b3366",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "8f8ed22b-74ae-aa4c-ba0b-b116ec5b3366"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0000133514404296875,
+       "y": 1.7835748195648194,
+       "z": 0.00003814697265625
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "5f265f92-0328-f94b-8c26-36f4e2a4b38a"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -77188,7 +77667,11 @@
      "parent": {
       "uid": "ff56173f-15e7-c843-87de-b01c3ddec23c"
      },
-     "children": [],
+     "children": [
+      {
+       "uid": "af537bc9-f952-8c43-80b1-1987f72e1a88"
+      }
+     ],
      "active": true
     },
     "has_bone_component": true,
@@ -77218,6 +77701,56 @@
       "z": 0.0
      },
      "weight_curve": ""
+    }
+   }
+  },
+  {
+   "uid": "af537bc9-f952-8c43-80b1-1987f72e1a88",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "af537bc9-f952-8c43-80b1-1987f72e1a88"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "HeadTop",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": -0.0000171661376953125,
+       "y": 1.0270745754241944,
+       "z": -0.0000324249267578125
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 0.9999999403953552,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "f8bbda02-718d-0445-a800-ef40690cabcc"
+     },
+     "children": [],
+     "active": true
     }
    }
   },
@@ -79021,7 +79554,7 @@
         "uid": "0e2966d3-d191-634c-a909-c9f1c085c381"
        },
        "Title": "Hand IK (Two Bone)",
-       "Description": "Two Bone IK puts a hand on a target and bends the elbow toward a pole. Pull the lever (E at the marker): your pick-up clip carries a 'HandIK' curve that is the IK weight, so the hand lands on the grip exactly while the clip reaches. The driver's hands ride a turning wheel; the third reaches for an orb, eased by soften.",
+       "Description": "Two Bone IK puts a hand on a target and bends the elbow toward a pole. Pull the lever (F at the marker): your pick-up clip carries a 'HandIK' curve that is the IK weight, so the hand lands on the grip exactly while the clip reaches. The driver's hands ride a turning wheel; the third reaches for an orb, eased by soften.",
        "Radius": 6.0,
        "Focus": {
         "flags": 2,
@@ -89056,7 +89589,7 @@
     },
     "has_text_component": true,
     "text_component": {
-     "text": "Press E at the marker",
+     "text": "Press F at the marker",
      "is_rich": true,
      "font": {
       "uid": "12c7fa32-e115-dd4b-925b-d8d95b59aae8"
@@ -110375,7 +110908,8 @@
      "half_resolution": false,
      "taa_response": 0.5,
      "write_velocity": false,
-     "velocity_alpha_threshold": 0.5
+     "velocity_alpha_threshold": 0.5,
+     "ribbon_facing": 0
     }
    }
   },
@@ -111244,7 +111778,8 @@
      "half_resolution": false,
      "taa_response": 0.5,
      "write_velocity": false,
-     "velocity_alpha_threshold": 0.5
+     "velocity_alpha_threshold": 0.5,
+     "ribbon_facing": 0
     }
    }
   },
@@ -112113,7 +112648,8 @@
      "half_resolution": false,
      "taa_response": 0.5,
      "write_velocity": false,
-     "velocity_alpha_threshold": 0.5
+     "velocity_alpha_threshold": 0.5,
+     "ribbon_facing": 0
     }
    }
   },
@@ -112982,7 +113518,8 @@
      "half_resolution": false,
      "taa_response": 0.5,
      "write_velocity": false,
-     "velocity_alpha_threshold": 0.5
+     "velocity_alpha_threshold": 0.5,
+     "ribbon_facing": 0
     }
    }
   }
@@ -113164,6 +113701,10 @@
        "LookTarget": {
         "flags": 2,
         "uid": "ff38825b-e934-ba4c-9f15-4fefa9da7648"
+       },
+       "LookMarker": {
+        "flags": 2,
+        "uid": "6872a5b2-2c72-bc4e-a757-d208adbf0a70"
        },
        "Sword": {
         "flags": 2,
@@ -114010,6 +114551,22 @@
     "has_bone_component": true,
     "bone_component": {
      "bone_index": 10
+    },
+    "has_two_bone_ik_component": true,
+    "two_bone_ik_component": {
+     "target": {
+      "flags": 2,
+      "uid": "2c6cb7bb-e16e-a249-b624-7c4758d46230"
+     },
+     "pole": {
+      "flags": 2,
+      "uid": "nil"
+     },
+     "weight": 1.0,
+     "rotation_weight": 0.0,
+     "soften": 0.05000000074505806,
+     "weight_curve": "HandIK",
+     "smoothing": 0.0
     }
    }
   },
@@ -115388,22 +115945,6 @@
     "has_bone_component": true,
     "bone_component": {
      "bone_index": 31
-    },
-    "has_two_bone_ik_component": true,
-    "two_bone_ik_component": {
-     "target": {
-      "flags": 2,
-      "uid": "2c6cb7bb-e16e-a249-b624-7c4758d46230"
-     },
-     "pole": {
-      "flags": 2,
-      "uid": "nil"
-     },
-     "weight": 1.0,
-     "rotation_weight": 0.0,
-     "soften": 0.05000000074505806,
-     "weight_curve": "HandIK",
-     "smoothing": 0.0
     }
    }
   },
@@ -116549,9 +117090,9 @@
     "transform_component": {
      "local_transform": {
       "position": {
-       "x": -0.029999999329447748,
-       "y": 0.08500000089406967,
-       "z": -0.10999999940395355
+       "x": -0.030002593994140626,
+       "y": 0.08500009775161743,
+       "z": -0.009999275207519532
       },
       "rotation_euler": {
        "x": -90.0,
@@ -116560,8 +117101,8 @@
       },
       "scale": {
        "x": 0.550000011920929,
-       "y": 0.550000011920929,
-       "z": 0.550000011920929
+       "y": 0.5499996542930603,
+       "z": 0.5499998927116394
       },
       "skew": {
        "x": 0.0,
@@ -116692,30 +117233,34 @@
     "transform_component": {
      "local_transform": {
       "position": {
-       "x": 0.0,
-       "y": 0.800000011920929,
-       "z": 0.0
+       "x": -0.000004172325589024695,
+       "y": 0.9971323609352112,
+       "z": 0.000052213672461220997
       },
       "rotation_euler": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
+       "x": -2.0844077852633092e-10,
+       "y": -1.8245068789113362e-9,
+       "z": -5.273555458984447e-8
       },
       "scale": {
-       "x": 1.0,
-       "y": 1.0,
-       "z": 1.0
+       "x": 0.9999996423721314,
+       "y": 1.0000003576278687,
+       "z": 0.9999995231628418
       },
       "skew": {
-       "x": 0.0,
-       "y": 0.0,
-       "z": 0.0
+       "x": -5.4569682106375694e-12,
+       "y": 1.6870921977149567e-12,
+       "z": -1.45525761580112e-11
       }
      },
      "parent": {
       "uid": "d5dc84f0-80e2-2d49-8459-636d94a771ad"
      },
-     "children": [],
+     "children": [
+      {
+       "uid": "ae805b70-6faf-384f-afd0-62831bbe148a"
+      }
+     ],
      "active": true
     },
     "has_particle_emitter_component": true,
@@ -116731,8 +117276,8 @@
      "prewarm": false,
      "auto_play": true,
      "lifetime": {
-      "min": 0.18000000715255738,
-      "max": 0.25
+      "min": 0.25999999046325686,
+      "max": 0.25999999046325686
      },
      "max_particles": 400,
      "simulation_space": 0,
@@ -116778,9 +117323,9 @@
       "z": 0.0
      },
      "shape_scale": {
-      "x": 1.0,
-      "y": 1.0,
-      "z": 1.0
+      "x": 0.0010000000474974514,
+      "y": 0.0010000000474974514,
+      "z": 0.0010000000474974514
      },
      "cone_angle": 25.0,
      "torus_thickness": 0.25,
@@ -116792,8 +117337,8 @@
      "direction": 0,
      "direction_spread": 0.0,
      "start_speed": {
-      "min": 0.0,
-      "max": 0.05000000074505806
+      "min": 0.009999999776482582,
+      "max": 0.009999999776482582
      },
      "speed_over_life": {
       "linked": true,
@@ -116871,7 +117416,7 @@
         "keys": [
          {
           "position": 0.0,
-          "value": 0.11999999731779099,
+          "value": 0.7599999904632568,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
@@ -116879,7 +117424,7 @@
          },
          {
           "position": 1.0,
-          "value": 0.0,
+          "value": 0.46000000834465029,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
@@ -116891,7 +117436,7 @@
         "keys": [
          {
           "position": 0.0,
-          "value": 0.14000000059604646,
+          "value": 0.7599999904632568,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
@@ -116899,7 +117444,7 @@
          },
          {
           "position": 1.0,
-          "value": 0.019999999552965165,
+          "value": 0.46000000834465029,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
@@ -116994,15 +117539,31 @@
         "keys": [
          {
           "position": 0.0,
-          "value": 0.699999988079071,
+          "value": 1.0,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
           "tangent_mode": 0
          },
          {
+          "position": 0.15000000596046449,
+          "value": 0.75,
+          "in_tangent": -1.0833332538604737,
+          "out_tangent": -1.0833332538604737,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.6000000238418579,
+          "value": 0.3499999940395355,
+          "in_tangent": -0.7058823704719544,
+          "out_tangent": -0.7058823704719544,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
           "position": 1.0,
-          "value": 0.4000000059604645,
+          "value": 0.15000000596046449,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
@@ -117014,15 +117575,31 @@
         "keys": [
          {
           "position": 0.0,
-          "value": 0.8999999761581421,
+          "value": 1.0,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
           "tangent_mode": 0
          },
          {
-          "position": 1.0,
+          "position": 0.15000000596046449,
+          "value": 0.9200000166893005,
+          "in_tangent": -0.6666666269302368,
+          "out_tangent": -0.6666666269302368,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.6000000238418579,
           "value": 0.6000000238418579,
+          "in_tangent": -0.7294117212295532,
+          "out_tangent": -0.7294117212295532,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.30000001192092898,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
           "interpolation": 1,
@@ -117034,6 +117611,22 @@
         "keys": [
          {
           "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.15000000596046449,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.6000000238418579,
           "value": 1.0,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
@@ -117054,9 +117647,25 @@
         "keys": [
          {
           "position": 0.0,
-          "value": 0.8999999761581421,
+          "value": 1.0,
           "in_tangent": 0.0,
           "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.15000000596046449,
+          "value": 0.8999999761581421,
+          "in_tangent": -0.9166666269302368,
+          "out_tangent": -0.9166666269302368,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.6000000238418579,
+          "value": 0.44999998807907107,
+          "in_tangent": -1.0588234663009644,
+          "out_tangent": -1.0588234663009644,
           "interpolation": 1,
           "tangent_mode": 0
          },
@@ -117255,7 +117864,7 @@
       }
      },
      "opacity": 1.0,
-     "color_intensity": 4.0,
+     "color_intensity": 5.0,
      "intensity_over_life": {
       "linked": true,
       "channels": {
@@ -117406,7 +118015,7 @@
      "random_spin_direction": false,
      "align_to_direction": false,
      "texture": {
-      "uid": "a37f3d56-d2e1-574c-9b84-6f49752c29d6"
+      "uid": "984d75f2-2809-0947-83a1-4a17895dade2"
      },
      "texture_mode": 0,
      "texture_sheet_tiles": {
@@ -117468,7 +118077,7 @@
        }
       }
      },
-     "render_mode": 0,
+     "render_mode": 6,
      "trail_length": 0.5,
      "trail_width_end": 0.0,
      "ribbon_texture_mode": 0,
@@ -117535,7 +118144,910 @@
      "half_resolution": false,
      "taa_response": 0.5,
      "write_velocity": false,
-     "velocity_alpha_threshold": 0.5
+     "velocity_alpha_threshold": 0.5,
+     "ribbon_facing": 1
+    }
+   }
+  },
+  {
+   "uid": "ae805b70-6faf-384f-afd0-62831bbe148a",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "ae805b70-6faf-384f-afd0-62831bbe148a"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Sword Trail Edge",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.3799999952316284,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "44169f5a-9c83-3c41-9f90-15f1e63a786e"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_particle_emitter_component": true,
+    "particle_emitter_component": {
+     "enabled": true,
+     "loop": true,
+     "duration": {
+      "count": 2.0
+     },
+     "start_delay": {
+      "count": 0.0
+     },
+     "prewarm": false,
+     "auto_play": true,
+     "lifetime": {
+      "min": 0.20000000298023225,
+      "max": 0.20000000298023225
+     },
+     "max_particles": 400,
+     "simulation_space": 0,
+     "use_fixed_seed": false,
+     "random_seed": 0,
+     "emission_rate": 0.0,
+     "rate_over_distance": 0.0,
+     "bursts": [],
+     "spawn_along_path": 1.0,
+     "lifetime_by_emitter_speed_curve": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "lifetime_by_emitter_speed_range": {
+      "min": 0.0,
+      "max": 10.0
+     },
+     "shape": 0,
+     "shape_position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "shape_scale": {
+      "x": 0.0010000000474974514,
+      "y": 0.0010000000474974514,
+      "z": 0.0010000000474974514
+     },
+     "cone_angle": 25.0,
+     "torus_thickness": 0.25,
+     "shape_mesh": {
+      "uid": "nil"
+     },
+     "shape_mesh_mode": 0,
+     "spawn_location": 0,
+     "direction": 0,
+     "direction_spread": 0.0,
+     "start_speed": {
+      "min": 0.0,
+      "max": 0.0
+     },
+     "speed_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "motion_easing": 0,
+     "drag": 0.0,
+     "gravity_scale": 0.0,
+     "acceleration": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+     },
+     "inherit_velocity": 0.0,
+     "turbulence_strength": 0.0,
+     "turbulence_frequency": 1.0,
+     "turbulence_speed": 0.5,
+     "turbulence_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "collision": 0,
+     "collision_planes": [],
+     "collision_radius_scale": 1.0,
+     "restitution": 0.5,
+     "friction": 0.20000000298023225,
+     "max_bounces": 3,
+     "sub_emitters": [],
+     "size_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 0.07000000029802323,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value1": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 0.07000000029802323,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "size_axes": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+     },
+     "size_axes_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value1": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value2": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "size_by_speed_multiplier": {
+      "min": 1.0,
+      "max": 1.0
+     },
+     "size_by_speed_speed_range": {
+      "min": 0.0,
+      "max": 10.0
+     },
+     "color_gradient": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 0.699999988079071,
+          "in_tangent": -0.6000000238418579,
+          "out_tangent": -0.6000000238418579,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.4000000059604645,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value1": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 0.8999999761581421,
+          "in_tangent": -0.30000001192092898,
+          "out_tangent": -0.30000001192092898,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.699999988079071,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value2": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value3": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 0.800000011920929,
+          "in_tangent": -1.0,
+          "out_tangent": -1.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "random_between_gradients": false,
+     "color_gradient_b": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.25,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.75,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value1": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.25,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.75,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value2": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.25,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.75,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value3": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.25,
+          "value": 1.0,
+          "in_tangent": 2.0,
+          "out_tangent": 2.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.5,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 0.75,
+          "value": 1.0,
+          "in_tangent": -2.0,
+          "out_tangent": -2.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "opacity": 1.0,
+     "color_intensity": 8.0,
+     "intensity_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "color_by_speed_gradient": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value1": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value2": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       },
+       "value3": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "color_by_speed_speed_range": {
+      "min": 0.0,
+      "max": 10.0
+     },
+     "start_rotation": {
+      "min": 0.0,
+      "max": 0.0
+     },
+     "spin_speed": {
+      "min": 0.0,
+      "max": 0.0
+     },
+     "spin_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "random_spin_direction": false,
+     "align_to_direction": false,
+     "texture": {
+      "uid": "948fd2dc-d473-834c-8f8c-d7d85439f1ab"
+     },
+     "texture_mode": 0,
+     "texture_sheet_tiles": {
+      "x": 1.0,
+      "y": 1.0
+     },
+     "texture_sheet_cycles": 0.0,
+     "texture_sheet_randomize": false,
+     "texture_sheet_random_row": false,
+     "texture_sheet_use_frame_curve": false,
+     "texture_sheet_frame_curve": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 1.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "frame_blending": false,
+     "erosion_over_life": {
+      "linked": true,
+      "channels": {
+       "value0": {
+        "keys": [
+         {
+          "position": 0.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         },
+         {
+          "position": 1.0,
+          "value": 0.0,
+          "in_tangent": 0.0,
+          "out_tangent": 0.0,
+          "interpolation": 1,
+          "tangent_mode": 0
+         }
+        ]
+       }
+      }
+     },
+     "render_mode": 6,
+     "trail_length": 0.5,
+     "trail_width_end": 0.0,
+     "ribbon_texture_mode": 0,
+     "ribbon_tile_time": 0.25,
+     "stretch_length_scale": 1.0,
+     "stretch_speed_scale": 0.10000000149011612,
+     "stretch_camera_velocity_scale": 0.0,
+     "facing_axis": {
+      "x": 0.0,
+      "y": 1.0,
+      "z": 0.0
+     },
+     "render_mesh": {
+      "uid": "nil"
+     },
+     "render_material": {
+      "uid": "nil"
+     },
+     "mesh_cast_shadows": true,
+     "blend_mode": 1,
+     "pivot": {
+      "x": 0.5,
+      "y": 0.5
+     },
+     "soft_fade_distance": 0.0,
+     "camera_offset": 0.0,
+     "lighting": 0,
+     "lighting_wrap": 0.5,
+     "normal_texture": {
+      "uid": "nil"
+     },
+     "receive_shadows": true,
+     "light_count": 0,
+     "light_intensity": 20.0,
+     "light_range": 3.0,
+     "light_color_from_particle": true,
+     "sort_mode": 0,
+     "sort_priority": 0,
+     "sort_backend": 1,
+     "culling_mode": 1,
+     "max_draw_distance": 0.0,
+     "draw_distance_fade": 2.0,
+     "camera_fade_range": {
+      "min": 0.0,
+      "max": 0.0
+     },
+     "max_screen_size": 0.0,
+     "subpixel_fade": false,
+     "bounds_mode": 0,
+     "fixed_bounds": {
+      "min": {
+       "x": -5.0,
+       "y": -5.0,
+       "z": -5.0
+      },
+      "max": {
+       "x": 5.0,
+       "y": 5.0,
+       "z": 5.0
+      }
+     },
+     "primitive": 0,
+     "cutout_alpha_threshold": 0.05000000074505806,
+     "half_resolution": false,
+     "taa_response": 0.5,
+     "write_velocity": false,
+     "velocity_alpha_threshold": 0.5,
+     "ribbon_facing": 0
     }
    }
   },
@@ -119012,8 +120524,87 @@
      "parent": {
       "uid": "nil"
      },
-     "children": [],
+     "children": [
+      {
+       "uid": "6872a5b2-2c72-bc4e-a757-d208adbf0a70"
+      }
+     ],
      "active": true
+    }
+   }
+  },
+  {
+   "uid": "6872a5b2-2c72-bc4e-a757-d208adbf0a70",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "6872a5b2-2c72-bc4e-a757-d208adbf0a70"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Look Marker",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.3799999952316284,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 180.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 0.09000000357627869,
+       "y": 0.09000000357627869,
+       "z": 0.09000000357627869
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "ff38825b-e934-ba4c-9f15-4fefa9da7648"
+     },
+     "children": [],
+     "active": false
+    },
+    "has_model_component": true,
+    "model_component": {
+     "enabled": true,
+     "static": true,
+     "casts_shadow": false,
+     "model": {
+      "lods": [
+       {
+        "uid": "0897b714-6a92-4b5b-b173-0a68adab2d8e"
+       }
+      ],
+      "materials": [
+       {
+        "uid": "903331d4-138a-6e44-9f10-acf145a1b492"
+       }
+      ],
+      "material_instances": [],
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
+     }
     }
    }
   }

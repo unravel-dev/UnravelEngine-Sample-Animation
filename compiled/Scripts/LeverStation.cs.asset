@@ -4,9 +4,10 @@ using Unravel.Core;
 namespace AnimationSample
 {
     /// <summary>
-    /// The lever the hero pulls with E. The pick-up clip reaches forward; the hero's right-hand Two Bone
-    /// IK (target: the lever grip, weight curve "HandIK") pulls the hand onto the grip exactly while the
-    /// clip's curve is up, and the clip's "Grab" event throws the lever, which switches the lamps.
+    /// The lever the hero pulls with F. The pick-up clip reaches forward with the free left hand; its Two
+    /// Bone IK (target: the lever grip, weight curve "HandIK") puts the hand on the grip and keeps it there
+    /// through the throw while the clip's curve is up, and the clip's "Grab" event throws the lever, which
+    /// switches the lamps.
     /// </summary>
     [ScriptSourceFile]
     public class LeverStation : Station
@@ -100,7 +101,7 @@ namespace AnimationSample
                 curve = animation != null ? animation.GetCurve("HandIK") : 0.0f;
             }
             return "Lamps: " + (on ? "ON" : "off") + "\nHandIK curve (hand IK weight): " + curve.ToString("0.00") +
-                   (hero.IsValid() && IsInReach(hero.transform.position) ? "\n[E] pull the lever" : "\nStand at the marker and press E");
+                   (hero.IsValid() && IsInReach(hero.transform.position) ? "\n[F] pull the lever" : "\nStand at the marker and press F");
         }
     }
 }

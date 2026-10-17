@@ -25,7 +25,68 @@
        "min_weight": 0.5
       }
      ],
-     "curves": []
+     "curves": [
+      {
+       "name": "Trail",
+       "curve": {
+        "linked": true,
+        "channels": {
+         "value0": {
+          "keys": [
+           {
+            "position": 0.0,
+            "value": 0.0,
+            "in_tangent": 0.0,
+            "out_tangent": 0.0,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 0.11999999731779099,
+            "value": 0.0,
+            "in_tangent": 6.25,
+            "out_tangent": 6.25,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 0.1599999964237213,
+            "value": 1.0,
+            "in_tangent": 7.692307949066162,
+            "out_tangent": 7.692307949066162,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 0.25,
+            "value": 1.0,
+            "in_tangent": -7.692307949066162,
+            "out_tangent": -7.692307949066162,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 0.28999999165534975,
+            "value": 0.0,
+            "in_tangent": -1.3333333730697632,
+            "out_tangent": -1.3333333730697632,
+            "interpolation": 1,
+            "tangent_mode": 0
+           },
+           {
+            "position": 1.0,
+            "value": 0.0,
+            "in_tangent": 0.0,
+            "out_tangent": 0.0,
+            "interpolation": 1,
+            "tangent_mode": 0
+           }
+          ]
+         }
+        }
+       }
+      }
+     ]
     }
    }
   },

@@ -4,9 +4,9 @@ namespace AnimationSample
 {
     /// <summary>
     /// A sparring fighter driven only through its controller's parameters (Sparring.actrl): triggers for
-    /// attacks, dodges and hits, a Block bool, a Dead bool. The state machine does the rest - Any State
-    /// transitions into Hit and Death, a guard that turns hits into block reactions, exit times back to
-    /// Idle. Damage lands on the attack clips' "Hit" events; the AI reads the opponent's state tags
+    /// attacks, dodges, hits and the knockout (Die), a Block bool, a Dead bool. The state machine does the
+    /// rest - Any State transitions into Hit and Death, a guard that turns hits into block reactions, exit
+    /// times back to Idle. Damage lands on the attack clips' "Hit" events; the AI reads the opponent's state tags
     /// (Guard, Dodge, Down) to decide what the blow did.
     /// </summary>
     [ScriptSourceFile]
@@ -125,6 +125,9 @@ namespace AnimationSample
             {
                 Health = 0;
                 animation.SetBool("Block", false);
+                // Die starts the fall once; Dead keeps the fighter down until it clears. A bool on the
+                // Any State transition would fire again from Down, and the fighter would fall again.
+                animation.SetTrigger("Die");
                 animation.SetBool("Dead", true);
                 return "knocked out";
             }

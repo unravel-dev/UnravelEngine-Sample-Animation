@@ -16,9 +16,9 @@
         <member name="T:AnimationSample.Duelist">
             <summary>
             A sparring fighter driven only through its controller's parameters (Sparring.actrl): triggers for
-            attacks, dodges and hits, a Block bool, a Dead bool. The state machine does the rest - Any State
-            transitions into Hit and Death, a guard that turns hits into block reactions, exit times back to
-            Idle. Damage lands on the attack clips' "Hit" events; the AI reads the opponent's state tags
+            attacks, dodges, hits and the knockout (Die), a Block bool, a Dead bool. The state machine does the
+            rest - Any State transitions into Hit and Death, a guard that turns hits into block reactions, exit
+            times back to Idle. Damage lands on the attack clips' "Hit" events; the AI reads the opponent's state tags
             (Guard, Dodge, Down) to decide what the blow did.
             </summary>
         </member>
@@ -171,22 +171,39 @@
             
              Movement goes through the character controller; the animation controller (Hero.actrl) only gets
              parameters - Speed / Crouch for the 2D locomotion blend space, Grounded, triggers for jump, roll,
-             the sword combo, pick-up and hit reactions, Aim / AimPitch for the masked upper-body layer. The
+             dash, the sword combo, pick-up and hit reactions, Aim / AimPitch for the masked upper-body layer. The
              state machine decides; this script reads it back (IsInTag "Busy") to stop steering mid-attack.
             
-             Root motion is on: the sword attacks, their recoveries and the roll carry their own travel, which
+             Root motion is on: the sword attacks, their recoveries, the roll and the dash carry their own travel, which
              the animation system moves through the character controller (so it still collides). Clips the
              script moves itself - locomotion, jumps, interactions - are imported "Keep In Place". While a
              Busy state plays the script adds no velocity of its own.
             
-             Rig modifiers it drives: Foot IK (weight 0 in the air), the head's Look At IK (target: the nearest
-             point of interest), the right hand's Two Bone IK on the lever (weighted by the clip's HandIK
-             curve, so it needs no script), the sword trail from the clip's Trail curve. The jump leaves the
+             Rig modifiers it drives: Foot IK (weight 0 in the air), the head's Look At IK (target: a character
+             of the station around the hero, marked by the look marker), the left hand's Two Bone IK on the
+             lever (weighted by the clip's HandIK curve, so it needs no script), the sword trail from the
+             clip's Trail curve. The jump leaves the
              ground on the clip's Takeoff event, through the public method of that name.
              </summary>
         </member>
         <member name="P:AnimationSample.HeroController.StateLine">
             <summary>Read by the HUD.</summary>
+        </member>
+        <member name="F:AnimationSample.HeroController.EyeHeight">
+            <summary>Height the hero looks from (m).</summary>
+        </member>
+        <member name="F:AnimationSample.HeroController.CarrySpeed">
+            <summary>Above this speed (m/s, between walk and jog) the sword arm is held in its carry pose.</summary>
+        </member>
+        <member name="F:AnimationSample.HeroController.LookFollowRate">
+            <summary>How fast a glance follows a new point (1/s).</summary>
+        </member>
+        <member name="F:AnimationSample.HeroController.MarkerSize">
+            <summary>The look marker: size and gap between its center and the top of the head (m), bob
+            amplitude (m) and rate (rad/s), fade rate (1/s).</summary>
+        </member>
+        <member name="F:AnimationSample.HeroController.TrailRate">
+            <summary>Slash trail points per second at a Trail curve of 1 (spread along the blade's path).</summary>
         </member>
         <member name="M:AnimationSample.HeroController.TeleportTo(Vector3,System.Single)">
             <summary>
@@ -199,6 +216,12 @@
         <member name="M:AnimationSample.HeroController.Takeoff">
             <summary>Called by the Takeoff event of the jump clip: the feet leave the ground now.</summary>
         </member>
+        <member name="M:AnimationSample.HeroController.DriveLook(System.Single)">
+            <summary>
+            The head's Look At IK glances at what the station around the hero shows (a character's head, else
+            its Focus point) while the hero is free; the look marker hovers over it meanwhile.
+            </summary>
+        </member>
         <member name="T:AnimationSample.LayerStation">
             <summary>
             Layers. The barbarian walks on the base layer; an override layer masked to the spine and
@@ -209,9 +232,10 @@
         </member>
         <member name="T:AnimationSample.LeverStation">
             <summary>
-            The lever the hero pulls with E. The pick-up clip reaches forward; the hero's right-hand Two Bone
-            IK (target: the lever grip, weight curve "HandIK") pulls the hand onto the grip exactly while the
-            clip's curve is up, and the clip's "Grab" event throws the lever, which switches the lamps.
+            The lever the hero pulls with F. The pick-up clip reaches forward with the free left hand; its Two
+            Bone IK (target: the lever grip, weight curve "HandIK") puts the hand on the grip and keeps it there
+            through the throw while the clip's curve is up, and the clip's "Grab" event throws the lever, which
+            switches the lamps.
             </summary>
         </member>
         <member name="M:AnimationSample.LeverStation.Pull">
@@ -284,20 +308,56 @@
             while the hero stands in its area. Exhibits with behavior derive from it.
             </summary>
         </member>
+        <member name="F:AnimationSample.Station.MinFocusDistance">
+            <summary>The hero looks no closer than this (m): its head would twist to the side.</summary>
+        </member>
+        <member name="F:AnimationSample.Station.MaxFocusAngle">
+            <summary>Nor further off its facing than this (degrees): the look fades out behind it.</summary>
+        </member>
+        <member name="F:AnimationSample.Station.FocusStickiness">
+            <summary>A character the hero already looks at keeps its gaze until another is this much closer (m).</summary>
+        </member>
+        <member name="F:AnimationSample.Station.FallbackHeadHeight">
+            <summary>Above the feet of a character whose head bone has another name (m, at scale 1).</summary>
+        </member>
+        <member name="F:AnimationSample.Station.DefaultHeadTop">
+            <summary>Top of a head above its bone when the character has no HeadTop anchor (m, at scale 1).</summary>
+        </member>
+        <member name="F:AnimationSample.Station.HeadTopName">
+            <summary>Optional child of the head bone at the top of the head (helmets, big heads).</summary>
+        </member>
+        <member name="M:AnimationSample.Station.GetHeadTopHeight(System.Int32)">
+            <summary>
+            How far the top of the head reaches from <see cref="M:AnimationSample.Station.GetHeadPosition(System.Int32)"/> (m). The anchor's distance, not
+            its height: a big head that tilts or lies down still keeps the marker clear of it.
+            </summary>
+        </member>
+        <member name="M:AnimationSample.Station.TryGetFocus(Vector3,Vector3,Vector3@,System.Single@)">
+            <summary>
+            What the hero at <paramref name="from"/>, facing <paramref name="forward"/>, glances at: the head of
+            the nearest character of the exhibit, else the Focus entity. <paramref name="headTop"/> is how far
+            the top of that head rises above the point (0 for the Focus entity). False when nothing is in
+            front of the hero and far enough away to look at.
+            </summary>
+        </member>
         <member name="M:AnimationSample.Station.GetStatus">
             <summary>Live values for the HUD, one per line.</summary>
-        </member>
-        <member name="M:AnimationSample.Station.GetFocusPosition">
-            <summary>World position of the focus point, or the station center a little above the floor.</summary>
         </member>
         <member name="T:AnimationSample.ThirdPersonCamera">
             <summary>
             Orbit camera around the hero: the mouse turns it, the wheel zooms, and while the hero aims it
-            moves in over the right shoulder. A sphere cast keeps it in front of walls.
+            moves in over the right shoulder. A sphere cast keeps it in front of walls. The cursor is locked
+            while playing (Cursor.lockState), so turning never runs out of screen.
             </summary>
+        </member>
+        <member name="P:AnimationSample.ThirdPersonCamera.IsCursorFree">
+            <summary>The cursor is free (Escape): the mouse does not look around, and clicks only take it back.</summary>
         </member>
         <member name="P:AnimationSample.ThirdPersonCamera.Aiming">
             <summary>Set by the hero while it aims.</summary>
+        </member>
+        <member name="M:AnimationSample.ThirdPersonCamera.UpdateCursorLock">
+            <summary>Escape frees the cursor; a click takes it back (after the hero has read that click).</summary>
         </member>
     </members>
 </doc>

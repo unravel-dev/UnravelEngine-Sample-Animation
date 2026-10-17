@@ -49,6 +49,13 @@
     "default_float": 0.0,
     "default_int": 0,
     "default_bool": false
+   },
+   {
+    "name": "Die",
+    "type": 3,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
    }
   ],
   "layers": [
@@ -313,7 +320,7 @@
       "destination": "Death",
       "conditions": [
        {
-        "parameter": "Dead",
+        "parameter": "Die",
         "mode": 4,
         "threshold": 0.0
        }

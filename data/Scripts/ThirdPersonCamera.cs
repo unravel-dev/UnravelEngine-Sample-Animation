@@ -4,7 +4,8 @@ namespace AnimationSample
 {
     /// <summary>
     /// Orbit camera around the hero: the mouse turns it, the wheel zooms, and while the hero aims it
-    /// moves in over the right shoulder. A sphere cast keeps it in front of walls.
+    /// moves in over the right shoulder. A sphere cast keeps it in front of walls. The cursor is locked
+    /// while playing (Cursor.lockState), so turning never runs out of screen.
     /// </summary>
     [ScriptSourceFile]
     public class ThirdPersonCamera : ScriptComponent
@@ -34,6 +35,12 @@ namespace AnimationSample
         public float MinPitch = -30.0f;
         public float MaxPitch = 65.0f;
 
+        [Tooltip("Lock the cursor while playing, so the mouse turns the camera endlessly. Escape frees it, a click takes it back.")]
+        public bool LockCursor = true;
+
+        /// <summary>The cursor is free (Escape): the mouse does not look around, and clicks only take it back.</summary>
+        public bool IsCursorFree => LockCursor && Cursor.lockState != CursorLockMode.Locked;
+
         /// <summary>Set by the hero while it aims.</summary>
         public bool Aiming { get; set; }
 
@@ -47,6 +54,10 @@ namespace AnimationSample
 
         public override void OnStart()
         {
+            if (LockCursor)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
             distance = Distance;
             if (Target.IsValid())
             {
@@ -62,8 +73,12 @@ namespace AnimationSample
                 return;
             }
             float dt = Time.deltaTime;
-            yaw += Input.GetAxis("Mouse X") * Sensitivity * dt;
-            pitch = Mathf.Clamp(pitch - Input.GetAxis("Mouse Y") * Sensitivity * dt, MinPitch, MaxPitch);
+            UpdateCursorLock();
+            if (!IsCursorFree)
+            {
+                yaw += Input.GetAxis("Mouse X") * Sensitivity * dt;
+                pitch = Mathf.Clamp(pitch - Input.GetAxis("Mouse Y") * Sensitivity * dt, MinPitch, MaxPitch);
+            }
             Distance = Mathf.Clamp(Distance - Input.GetAxis("Mouse ScrollWheel") * 0.6f, MinDistance, MaxDistance);
             aimBlend = Mathf.MoveTowards(aimBlend, Aiming ? 1.0f : 0.0f, dt * 5.0f);
             float blend = Mathf.SmoothStep(0.0f, 1.0f, aimBlend);
@@ -80,6 +95,23 @@ namespace AnimationSample
             distance = wanted < distance ? wanted : Mathf.Lerp(distance, wanted, 1.0f - Mathf.Exp(-dt * 6.0f));
             owner.transform.position = pivot + back * distance;
             owner.transform.rotation = rotation;
+        }
+
+        /// <summary>Escape frees the cursor; a click takes it back (after the hero has read that click).</summary>
+        private void UpdateCursorLock()
+        {
+            if (!LockCursor)
+            {
+                return;
+            }
+            if (Input.IsPressed(KeyCode.Escape))
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else if (Cursor.lockState != CursorLockMode.Locked && Input.IsPressed(MouseButton.Left))
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
     }
 }
