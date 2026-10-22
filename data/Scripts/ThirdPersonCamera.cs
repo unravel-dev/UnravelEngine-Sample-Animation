@@ -5,7 +5,9 @@ namespace AnimationSample
     /// <summary>
     /// Orbit camera around the hero: the mouse turns it, the wheel zooms, and while the hero aims it
     /// moves in over the right shoulder. A sphere cast keeps it in front of walls. The cursor is locked
-    /// while playing (Cursor.lockState), so turning never runs out of screen.
+    /// while playing (Cursor.lockState), so turning never runs out of screen. On a touch screen a finger
+    /// dragged over the free screen turns it instead, and the cursor is left alone; the fingers on the
+    /// on-screen controls (SampleTouchJoystick) are not among the touches.
     /// </summary>
     [ScriptSourceFile]
     public class ThirdPersonCamera : ScriptComponent
@@ -38,6 +40,9 @@ namespace AnimationSample
         [Tooltip("Lock the cursor while playing, so the mouse turns the camera endlessly. Escape frees it, a click takes it back.")]
         public bool LockCursor = true;
 
+        [Tooltip("Degrees the camera turns for a finger dragged across the screen's height.")]
+        public float TouchLookSpeed = 200.0f;
+
         /// <summary>The cursor is free (Escape): the mouse does not look around, and clicks only take it back.</summary>
         public bool IsCursorFree => LockCursor && Cursor.lockState != CursorLockMode.Locked;
 
@@ -51,10 +56,14 @@ namespace AnimationSample
         private float pitch = 14.0f;
         private float aimBlend;
         private float distance;
+        /// <summary>The camera locks the cursor and lets Escape free it: LockCursor, off a touch screen.</summary>
+        private bool holdsCursor;
 
         public override void OnStart()
         {
-            if (LockCursor)
+            // A touch screen has no cursor to hold.
+            holdsCursor = LockCursor && !Input.touchSupported;
+            if (holdsCursor)
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
@@ -79,6 +88,7 @@ namespace AnimationSample
                 yaw += Input.GetAxis("Mouse X") * Sensitivity * dt;
                 pitch = Mathf.Clamp(pitch - Input.GetAxis("Mouse Y") * Sensitivity * dt, MinPitch, MaxPitch);
             }
+            LookByTouch();
             Distance = Mathf.Clamp(Distance - Input.GetAxis("Mouse ScrollWheel") * 0.6f, MinDistance, MaxDistance);
             aimBlend = Mathf.MoveTowards(aimBlend, Aiming ? 1.0f : 0.0f, dt * 5.0f);
             float blend = Mathf.SmoothStep(0.0f, 1.0f, aimBlend);
@@ -97,10 +107,30 @@ namespace AnimationSample
             owner.transform.rotation = rotation;
         }
 
+        /// <summary>
+        /// The first finger that moves turns the camera as the mouse would: dragged right it looks right,
+        /// dragged up it looks up. A finger's motion never reads as "Mouse X" / "Mouse Y".
+        /// </summary>
+        private void LookByTouch()
+        {
+            float degreesPerPixel = TouchLookSpeed / Mathf.Max(1.0f, Screen.height);
+            for (int i = 0; i < Input.touchCount; ++i)
+            {
+                Touch touch = Input.GetTouch(i);
+                if (touch.Phase != TouchPhase.Moved)
+                {
+                    continue;
+                }
+                yaw += touch.DeltaPosition.x * degreesPerPixel;
+                pitch = Mathf.Clamp(pitch + touch.DeltaPosition.y * degreesPerPixel, MinPitch, MaxPitch);
+                return;
+            }
+        }
+
         /// <summary>Escape frees the cursor; a click takes it back (after the hero has read that click).</summary>
         private void UpdateCursorLock()
         {
-            if (!LockCursor)
+            if (!holdsCursor)
             {
                 return;
             }

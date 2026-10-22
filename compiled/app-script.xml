@@ -38,6 +38,9 @@
         <member name="T:AnimationSample.GalleryModel">
             <summary>The data model "gallery" of UI/Hud.rhtml.</summary>
         </member>
+        <member name="F:AnimationSample.GalleryModel.touch">
+            <summary>On a touch screen the cards keep clear of the on-screen controls in the bottom corners.</summary>
+        </member>
         <member name="T:AnimationSample.GalleryHud">
             <summary>
             The gallery HUD: the card of the station the hero stands at (what it shows, live values), the
@@ -347,7 +350,9 @@
             <summary>
             Orbit camera around the hero: the mouse turns it, the wheel zooms, and while the hero aims it
             moves in over the right shoulder. A sphere cast keeps it in front of walls. The cursor is locked
-            while playing (Cursor.lockState), so turning never runs out of screen.
+            while playing (Cursor.lockState), so turning never runs out of screen. On a touch screen a finger
+            dragged over the free screen turns it instead, and the cursor is left alone; the fingers on the
+            on-screen controls (SampleTouchJoystick) are not among the touches.
             </summary>
         </member>
         <member name="P:AnimationSample.ThirdPersonCamera.IsCursorFree">
@@ -355,6 +360,15 @@
         </member>
         <member name="P:AnimationSample.ThirdPersonCamera.Aiming">
             <summary>Set by the hero while it aims.</summary>
+        </member>
+        <member name="F:AnimationSample.ThirdPersonCamera.holdsCursor">
+            <summary>The camera locks the cursor and lets Escape free it: LockCursor, off a touch screen.</summary>
+        </member>
+        <member name="M:AnimationSample.ThirdPersonCamera.LookByTouch">
+            <summary>
+            The first finger that moves turns the camera as the mouse would: dragged right it looks right,
+            dragged up it looks up. A finger's motion never reads as "Mouse X" / "Mouse Y".
+            </summary>
         </member>
         <member name="M:AnimationSample.ThirdPersonCamera.UpdateCursorLock">
             <summary>Escape frees the cursor; a click takes it back (after the hero has read that click).</summary>

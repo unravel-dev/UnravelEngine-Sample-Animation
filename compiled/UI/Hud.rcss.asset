@@ -23,12 +23,14 @@ html, body {
 	box-sizing: border-box;
 }
 
+/* The HUD only shows: clicks and fingers pass through it to the game and the on-screen controls. */
 body {
 	font-family: Gallery;
 	font-weight: 400;
 	font-size: 14dp;
 	color: #e8edf2;
 	background-color: rgba(0, 0, 0, 0);
+	pointer-events: none;
 }
 
 .panel {
@@ -224,4 +226,27 @@ body {
 	font-size: 12dp;
 	color: #c6d2dc;
 	margin-top: 2dp;
+}
+
+/* ------------------------------------------------------------ touch screens */
+
+/* The stick and the buttons take the bottom corners: the station card moves to the top center,
+   the hero state under the brand. */
+body.touch #station {
+	bottom: auto;
+	top: 18dp;
+	left: 50%;
+	margin-left: -230dp;
+	transform: translateY(-24dp);
+}
+
+body.touch #station.shown {
+	transform: translateY(0dp);
+}
+
+body.touch #hero-state {
+	right: auto;
+	bottom: auto;
+	left: 20dp;
+	top: 86dp;
 }

@@ -15,6 +15,8 @@ namespace AnimationSample
         public bool hasEvents;
         public string heroState = "";
         public string heroSpeed = "";
+        /// <summary>On a touch screen the cards keep clear of the on-screen controls in the bottom corners.</summary>
+        public bool touch;
     }
 
     /// <summary>
@@ -42,6 +44,9 @@ namespace AnimationSample
         {
             document = owner.GetComponent<UIDocumentComponent>();
             model = document.GetModel("gallery");
+            // The controls card lists keys; a touch screen has none (and no F1 to hide the card).
+            data.touch = Input.touchSupported;
+            data.helpShown = !data.touch;
             model.Bind(data);
             if (Hero.IsValid())
             {

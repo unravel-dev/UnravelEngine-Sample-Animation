@@ -170,7 +170,9 @@ namespace AnimationSample
                 jumpPending = true;
                 jumpPendingTime = 0.0f;
             }
-            if (!mouseFree && Input.IsPressed(MouseButton.Left))
+            // "Attack", "Roll" and "Interact" are input actions (Settings > Input): keys and gamepad buttons,
+            // which the on-screen controls press on a touch screen.
+            if ((!mouseFree && Input.IsPressed(MouseButton.Left)) || Input.IsPressed("Attack"))
             {
                 animation.SetTrigger(aiming ? "Shoot" : "Attack");
             }
@@ -178,7 +180,7 @@ namespace AnimationSample
             {
                 animation.SetTrigger("Reload");
             }
-            if (Input.IsPressed(KeyCode.Q) && grounded && !busy)
+            if (Input.IsPressed("Roll") && grounded && !busy)
             {
                 animation.SetTrigger("Roll");
             }
@@ -195,7 +197,7 @@ namespace AnimationSample
                 dancing = false;
                 animation.SetTrigger("Dash");
             }
-            if (Input.IsPressed(KeyCode.F) && grounded && !busy)
+            if (Input.IsPressed("Interact") && grounded && !busy)
             {
                 // Faces the lever so the clip's reach lines up with it; the hand IK closes the rest.
                 TryPullLever();

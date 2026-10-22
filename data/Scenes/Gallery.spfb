@@ -1,5 +1,5 @@
 {
- "entities_count": 12,
+ "entities_count": 13,
  "entities": [
   {
    "uid": "54b340a7-43bb-4a49-bd7a-6b92b873fe94",
@@ -61,11 +61,11 @@
        "y": 0
       },
       "viewport_size": {
-       "width": 1283,
-       "height": 831
+       "width": 1920,
+       "height": 1080
       },
       "orthographic_size": 5.0,
-      "aspect_ratio": 1.543923020362854,
+      "aspect_ratio": 1.7777777910232545,
       "aspect_locked": false,
       "frustum_locked": false
      },
@@ -102,6 +102,7 @@
        "MinPitch": -30.0,
        "MaxPitch": 65.0,
        "LockCursor": true,
+       "TouchLookSpeed": 200.0,
        "Aiming": false
       }
      ]
@@ -120763,6 +120764,81 @@
        "count": 0.0
       }
      }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0",
+ "entities": [
+  {
+   "uid": "4d7c79cd-3f84-ec4d-be8f-aad9d1c7a9dd",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "4d7c79cd-3f84-ec4d-be8f-aad9d1c7a9dd"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Touch Controls",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "uid": "nil"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_script_component": true,
+    "script_component": {
+     "script_components": [
+      {
+       "type": "Unravel.Samples.SampleTouchJoystick",
+       "@slot": "931fbd40-74df-5f4e-810f-40d5f2966846",
+       "RightStick": false,
+       "Radius": 0.10999999940395355,
+       "DeadZone": 0.15000000596046449,
+       "Floating": true,
+       "AreaWidth": 0.4000000059604645,
+       "AreaHeight": 0.6499999761581421,
+       "SouthLabel": "Jump",
+       "EastLabel": "Roll",
+       "WestLabel": "Attack",
+       "NorthLabel": "Use",
+       "ButtonSize": 0.12999999523162843,
+       "Show": 0,
+       "TapsAreNotClicks": true
+      }
+     ]
     }
    }
   }
