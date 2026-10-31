@@ -16,6 +16,22 @@
      "quality": {
       "max_size": 0,
       "compression": 0
+     },
+     "platforms": {
+      "desktop": {
+       "is_overridden": false,
+       "quality": {
+        "max_size": 0,
+        "compression": 0
+       }
+      },
+      "android": {
+       "is_overridden": false,
+       "quality": {
+        "max_size": 0,
+        "compression": 0
+       }
+      }
      }
     }
    }
