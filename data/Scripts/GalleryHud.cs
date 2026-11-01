@@ -31,6 +31,9 @@ namespace AnimationSample
         [Tooltip("Seconds between refreshes of the station status.")]
         public float StatusInterval = 0.15f;
 
+        /// <summary>Lines the feed lists on a touch screen: the on-screen buttons take the space below it.</summary>
+        private const int TouchFeedLines = 4;
+
         private UIDocumentComponent document;
         private UIDataModel model;
         private GalleryModel data = new GalleryModel();
@@ -106,7 +109,11 @@ namespace AnimationSample
             }
             eventVersion = EventLog.Version;
             data.events.Clear();
-            data.events.AddRange(EventLog.Entries);
+            int lines = data.touch ? Mathf.Min(TouchFeedLines, EventLog.Entries.Count) : EventLog.Entries.Count;
+            for (int i = 0; i < lines; ++i)
+            {
+                data.events.Add(EventLog.Entries[i]);
+            }
             data.hasEvents = data.events.Count > 0;
             model.Dirty("events");
             model.Dirty("hasEvents");

@@ -112,6 +112,20 @@
     "default_float": 0.0,
     "default_int": 0,
     "default_bool": false
+   },
+   {
+    "name": "Cut",
+    "type": 2,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
+   },
+   {
+    "name": "Combo",
+    "type": 1,
+    "default_float": 0.0,
+    "default_int": 0,
+    "default_bool": false
    }
   ],
   "layers": [
@@ -323,7 +337,7 @@
       "speed_parameter": "",
       "loop": false,
       "cycle_offset": 0.0,
-      "tag": "",
+      "tag": "Busy",
       "editor_position": {
        "x": -40.0,
        "y": 430.0
@@ -361,7 +375,7 @@
       "speed_parameter": "",
       "loop": false,
       "cycle_offset": 0.0,
-      "tag": "",
+      "tag": "Busy",
       "editor_position": {
        "x": 220.0,
        "y": 430.0
@@ -446,6 +460,42 @@
     ],
     "transitions": [
      {
+      "source": "",
+      "destination": "Roll",
+      "conditions": [
+       {
+        "parameter": "Roll",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "",
+      "destination": "Dash",
+      "conditions": [
+       {
+        "parameter": "Dash",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.07999999821186066,
+      "offset": 0.07000000029802323,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
       "source": "Locomotion",
       "destination": "JumpStart",
       "conditions": [
@@ -456,7 +506,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.3499999940395355,
       "duration": 0.07999999821186066,
       "offset": 0.0,
       "phase_sync": false,
@@ -474,7 +524,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.8999999761581421,
       "duration": 0.25,
       "offset": 0.0,
       "phase_sync": false,
@@ -522,7 +572,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.550000011920929,
       "duration": 0.05999999865889549,
       "offset": 0.0,
       "phase_sync": false,
@@ -544,7 +594,25 @@
       "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "JumpLand",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.18000000715255738,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -556,25 +624,25 @@
       "duration": 0.25,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
-      "source": "Locomotion",
-      "destination": "Roll",
+      "source": "Roll",
+      "destination": "Locomotion",
       "conditions": [
        {
-        "parameter": "Roll",
+        "parameter": "Cut",
         "mode": 4,
         "threshold": 0.0
        }
       ],
-      "has_exit_time": false,
-      "exit_time": 0.0,
-      "duration": 0.07999999821186066,
+      "has_exit_time": true,
+      "exit_time": 0.5199999809265137,
+      "duration": 0.15000000596046449,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -586,7 +654,37 @@
       "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Dash",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.30000001192092898,
+      "duration": 0.15000000596046449,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Dash",
+      "destination": "Locomotion",
+      "conditions": [],
+      "has_exit_time": true,
+      "exit_time": 0.800000011920929,
+      "duration": 0.20000000298023225,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -597,10 +695,84 @@
         "parameter": "Attack",
         "mode": 4,
         "threshold": 0.0
+       },
+       {
+        "parameter": "Combo",
+        "mode": 2,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.9800000190734863,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "SwordA",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "Combo",
+        "mode": 2,
+        "threshold": 1.0
        }
       ],
       "has_exit_time": false,
       "exit_time": 0.0,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "SwordB",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "Combo",
+        "mode": 2,
+        "threshold": 2.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.0,
+      "duration": 0.10000000149011612,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "Locomotion",
+      "destination": "SwordC",
+      "conditions": [
+       {
+        "parameter": "Attack",
+        "mode": 4,
+        "threshold": 0.0
+       },
+       {
+        "parameter": "Combo",
+        "mode": 2,
+        "threshold": 3.0
+       }
+      ],
+      "has_exit_time": false,
+      "exit_time": 0.8500000238418579,
       "duration": 0.10000000149011612,
       "offset": 0.0,
       "phase_sync": false,
@@ -630,17 +802,17 @@
       "destination": "Locomotion",
       "conditions": [
        {
-        "parameter": "Speed",
-        "mode": 0,
-        "threshold": 0.5
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
        }
       ],
       "has_exit_time": true,
-      "exit_time": 0.44999998807907107,
-      "duration": 0.20000000298023225,
+      "exit_time": 0.41999998688697817,
+      "duration": 0.18000000715255738,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -652,7 +824,7 @@
       "duration": 0.30000001192092898,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -671,6 +843,24 @@
       "offset": 0.0,
       "phase_sync": false,
       "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordA",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.6800000071525574,
+      "duration": 0.18000000715255738,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -696,7 +886,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.8999999761581421,
       "duration": 0.07999999821186066,
       "offset": 0.0,
       "phase_sync": false,
@@ -708,9 +898,9 @@
       "destination": "Locomotion",
       "conditions": [
        {
-        "parameter": "Speed",
-        "mode": 0,
-        "threshold": 0.5
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
        }
       ],
       "has_exit_time": false,
@@ -718,7 +908,7 @@
       "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -730,7 +920,7 @@
       "duration": 0.25,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -749,6 +939,24 @@
       "offset": 0.0,
       "phase_sync": false,
       "interruptible": false,
+      "can_transition_to_self": false
+     },
+     {
+      "source": "SwordB",
+      "destination": "Locomotion",
+      "conditions": [
+       {
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
+       }
+      ],
+      "has_exit_time": true,
+      "exit_time": 0.6650000214576721,
+      "duration": 0.18000000715255738,
+      "offset": 0.0,
+      "phase_sync": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -774,7 +982,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.8999999761581421,
       "duration": 0.07999999821186066,
       "offset": 0.0,
       "phase_sync": false,
@@ -786,17 +994,17 @@
       "destination": "Locomotion",
       "conditions": [
        {
-        "parameter": "Speed",
-        "mode": 0,
-        "threshold": 0.5
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.800000011920929,
       "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -808,7 +1016,7 @@
       "duration": 0.25,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -816,17 +1024,17 @@
       "destination": "Locomotion",
       "conditions": [
        {
-        "parameter": "Speed",
-        "mode": 0,
-        "threshold": 0.5
+        "parameter": "Cut",
+        "mode": 4,
+        "threshold": 0.0
        }
       ],
       "has_exit_time": true,
-      "exit_time": 0.699999988079071,
-      "duration": 0.25,
+      "exit_time": 0.46000000834465029,
+      "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -838,7 +1046,7 @@
       "duration": 0.30000001192092898,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -852,7 +1060,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.8999999761581421,
       "duration": 0.15000000596046449,
       "offset": 0.0,
       "phase_sync": false,
@@ -868,7 +1076,7 @@
       "duration": 0.30000001192092898,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -882,7 +1090,7 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.8999999761581421,
       "duration": 0.3499999940395355,
       "offset": 0.0,
       "phase_sync": false,
@@ -900,11 +1108,11 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
+      "exit_time": 0.8999999761581421,
       "duration": 0.30000001192092898,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      },
      {
@@ -918,41 +1126,11 @@
        }
       ],
       "has_exit_time": false,
-      "exit_time": 0.0,
-      "duration": 0.20000000298023225,
-      "offset": 0.0,
-      "phase_sync": false,
-      "interruptible": false,
-      "can_transition_to_self": false
-     },
-     {
-      "source": "Locomotion",
-      "destination": "Dash",
-      "conditions": [
-       {
-        "parameter": "Dash",
-        "mode": 4,
-        "threshold": 0.0
-       }
-      ],
-      "has_exit_time": false,
       "exit_time": 0.8999999761581421,
-      "duration": 0.07999999821186066,
-      "offset": 0.0,
-      "phase_sync": false,
-      "interruptible": false,
-      "can_transition_to_self": false
-     },
-     {
-      "source": "Dash",
-      "destination": "Locomotion",
-      "conditions": [],
-      "has_exit_time": true,
-      "exit_time": 0.800000011920929,
       "duration": 0.20000000298023225,
       "offset": 0.0,
       "phase_sync": false,
-      "interruptible": false,
+      "interruptible": true,
       "can_transition_to_self": false
      }
     ],

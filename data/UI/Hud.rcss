@@ -231,7 +231,26 @@ body {
 /* ------------------------------------------------------------ touch screens */
 
 /* The stick and the buttons take the bottom corners: the station card moves to the top center,
-   the hero state under the brand. */
+   the hero state under the brand, and the event feed shrinks to a few one-line rows (GalleryHud
+   lists fewer) to stay above the buttons. */
+body.touch #feed {
+	width: 280dp;
+	padding: 8dp 12dp;
+}
+
+body.touch #feed .caption {
+	margin-bottom: 2dp;
+}
+
+body.touch .event {
+	margin-top: 3dp;
+	padding: 2dp 6dp;
+}
+
+body.touch .event-detail {
+	display: none;
+}
+
 body.touch #station {
 	bottom: auto;
 	top: 18dp;
