@@ -62,7 +62,7 @@ namespace AnimationSample
             }
             if (orbModel != null)
             {
-                orbModel.GetMaterialInstance().SetFloat(MaterialProperty.EmissiveIntensity, 0.4f + Glow * 9.0f);
+                orbModel.GetMaterialInstance().emissiveIntensity = 0.4f + Glow * 9.0f;
             }
         }
 
