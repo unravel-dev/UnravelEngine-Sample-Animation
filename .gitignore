@@ -28,6 +28,9 @@
 # Left behind by an interrupted save
 *.temp
 
+# Development tools and their output
+/dev/
+
 # Operating systems
 .DS_Store
 Thumbs.db
