@@ -231,26 +231,7 @@ body {
 /* ------------------------------------------------------------ touch screens */
 
 /* The stick and the buttons take the bottom corners: the station card moves to the top center,
-   the hero state under the brand, and the event feed shrinks to a few one-line rows (GalleryHud
-   lists fewer) to stay above the buttons. */
-body.touch #feed {
-	width: 280dp;
-	padding: 8dp 12dp;
-}
-
-body.touch #feed .caption {
-	margin-bottom: 2dp;
-}
-
-body.touch .event {
-	margin-top: 3dp;
-	padding: 2dp 6dp;
-}
-
-body.touch .event-detail {
-	display: none;
-}
-
+   the hero state under the brand, and the event feed lists fewer events (GalleryHud). */
 body.touch #station {
 	bottom: auto;
 	top: 18dp;
@@ -268,4 +249,98 @@ body.touch #hero-state {
 	bottom: auto;
 	left: 20dp;
 	top: 86dp;
+}
+
+/* ---------- short screens: a phone in landscape ---------- */
+
+/* About 830 x 380 dp, with the stick and the buttons in the lower corners: three small cards share the top,
+   clear of a camera cutout on either side of a turned phone, and each event takes one line. */
+@media (max-height: 500dp) {
+	#brand {
+		left: 4.5vw;
+		top: 10dp;
+		padding: 5dp 10dp;
+		border-radius: 8dp;
+	}
+
+	#brand-title {
+		font-size: 12dp;
+		letter-spacing: 1.5dp;
+	}
+
+	#brand-sub {
+		display: none;
+	}
+
+	body.touch #hero-state {
+		left: 4.5vw;
+		top: 42dp;
+		padding: 4dp 10dp;
+		border-radius: 8dp;
+	}
+
+	.caption {
+		font-size: 9dp;
+		letter-spacing: 1dp;
+		margin-bottom: 1dp;
+	}
+
+	#hero-speed,
+	#hero-layers {
+		font-size: 10dp;
+		margin-top: 0dp;
+	}
+
+	body.touch #station {
+		top: 10dp;
+		margin-left: -21vw;
+		width: 42vw;
+		box-sizing: border-box;
+		padding: 7dp 11dp;
+		border-radius: 8dp;
+		border-left-width: 3dp;
+	}
+
+	#station-title {
+		font-size: 13dp;
+	}
+
+	#station-description {
+		margin-top: 2dp;
+		font-size: 10dp;
+		line-height: 13dp;
+	}
+
+	#station-status {
+		margin-top: 4dp;
+		padding: 3dp 6dp;
+		font-size: 10dp;
+		line-height: 13dp;
+	}
+
+	#feed {
+		top: 10dp;
+		right: 4.5vw;
+		width: 22vw;
+		box-sizing: border-box;
+		padding: 5dp 8dp;
+		border-radius: 8dp;
+	}
+
+	.event {
+		margin-top: 2dp;
+		padding: 1dp 5dp;
+		border-radius: 4dp;
+	}
+
+	.event-time,
+	.event-detail {
+		display: none;
+	}
+
+	.event-source,
+	.event-name {
+		font-size: 10dp;
+		margin-right: 4dp;
+	}
 }
