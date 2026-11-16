@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "title": "Animation Gallery",
+  "topic": "Animation",
+  "description": "A playable hero walks a plaza of exhibits: blend spaces, layers with masks and additive hits, clip events and curves, a state machine controller, root motion, one clip retargeted onto five rigs, foot, hand, chain and look-at IK, and spring bones.",
+  "tags": [
+    "Animation",
+    "IK",
+    "Retargeting"
+  ],
+  "icon": "run",
+  "order": 40,
+  "added": "2026-10-17",
+  "thumbnail": "thumbnail.jpg"
+}
