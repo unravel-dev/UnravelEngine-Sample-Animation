@@ -442,7 +442,7 @@ namespace AnimationSample
             velocity = Vector3.zero;
         }
 
-        /// <summary>Starts the lever pull as E does, when the hero stands in reach.</summary>
+        /// <summary>Starts the lever pull as F does, when the hero stands in reach.</summary>
         public bool TryPullLever()
         {
             if (lever == null || !lever.IsInReach(owner.transform.position))
