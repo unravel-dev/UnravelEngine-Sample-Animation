@@ -1086,134 +1086,6 @@
         "flags": 2,
         "uid": "d0e2a6a5-4b6b-634d-a84a-89f0ab26082c"
        }
-      },
-      {
-       "type": "AnimationSample.RetargetStation",
-       "@slot": "e18433a8-aae3-3644-9f4d-d81fa087d069",
-       "CharacterA": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterB": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterC": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterD": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterE": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "ClipSeconds": 6.0,
-       "Title": "Station",
-       "Description": "",
-       "Radius": 6.0,
-       "Focus": {
-        "flags": 2,
-        "uid": "nil"
-       }
-      },
-      {
-       "type": "AnimationSample.RetargetStation",
-       "@slot": "57d5488b-da48-8e4c-a6b8-6a56cd34a29d",
-       "CharacterA": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterB": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterC": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterD": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterE": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "ClipSeconds": 6.0,
-       "Title": "Station",
-       "Description": "",
-       "Radius": 6.0,
-       "Focus": {
-        "flags": 2,
-        "uid": "nil"
-       }
-      },
-      {
-       "type": "AnimationSample.RetargetStation",
-       "@slot": "6ad2a1d1-76e3-dd42-972e-2c52e741f043",
-       "CharacterA": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterB": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterC": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterD": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterE": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "ClipSeconds": 6.0,
-       "Title": "Station",
-       "Description": "",
-       "Radius": 6.0,
-       "Focus": {
-        "flags": 2,
-        "uid": "nil"
-       }
-      },
-      {
-       "type": "AnimationSample.RetargetStation",
-       "@slot": "d75c903b-70c6-fe4a-a5f2-cf9af01c1fd0",
-       "CharacterA": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterB": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterC": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterD": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "CharacterE": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "ClipSeconds": 6.0,
-       "Title": "Station",
-       "Description": "",
-       "Radius": 6.0,
-       "Focus": {
-        "flags": 2,
-        "uid": "nil"
-       }
       }
      ]
     }
@@ -5688,7 +5560,7 @@
     },
     "has_tag_component": true,
     "tag_component": {
-     "name": "UE Mannequin",
+     "name": "Mannequin",
      "tag": ""
     },
     "has_layer_component": true,
@@ -5782,7 +5654,7 @@
       {
        "type": "AnimationSample.FootstepEffects",
        "@slot": "0d35ab98-a577-874f-89de-e00bff7e670f",
-       "DisplayName": "UE Mannequin",
+       "DisplayName": "Mannequin",
        "LeftFootBone": "foot_l",
        "RightFootBone": "foot_r",
        "Dust": {
@@ -9684,7 +9556,7 @@
     },
     "has_text_component": true,
     "text_component": {
-     "text": "UE mannequin\nUE names",
+     "text": "Mannequin\nspine_01 names",
      "is_rich": true,
      "font": {
       "uid": "12c7fa32-e115-dd4b-925b-d8d95b59aae8"
@@ -9806,7 +9678,7 @@
     },
     "has_tag_component": true,
     "tag_component": {
-     "name": "UE Mannequin F",
+     "name": "Mannequin F",
      "tag": ""
     },
     "has_layer_component": true,
@@ -9900,7 +9772,7 @@
       {
        "type": "AnimationSample.FootstepEffects",
        "@slot": "131281aa-fd0c-9a4a-bf9e-7435d3c6ac7c",
-       "DisplayName": "UE Mannequin F",
+       "DisplayName": "Mannequin F",
        "LeftFootBone": "foot_l",
        "RightFootBone": "foot_r",
        "Dust": {
@@ -13830,7 +13702,7 @@
     },
     "has_text_component": true,
     "text_component": {
-     "text": "UE mannequin F\nother proportions",
+     "text": "Mannequin F\nother proportions",
      "is_rich": true,
      "font": {
       "uid": "12c7fa32-e115-dd4b-925b-d8d95b59aae8"
@@ -79562,35 +79434,6 @@
        "Focus": {
         "flags": 2,
         "uid": "adcae240-6a36-7342-a42d-0a260c65f1ab"
-       }
-      },
-      {
-       "type": "AnimationSample.HandIkStation",
-       "@slot": "ad6d1ce6-6489-3e49-9340-e6800b28b5bd",
-       "Wheel": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "WheelAngle": 70.0,
-       "WheelFrequency": 0.18000000715255738,
-       "DriverLeftHand": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "DriverRightHand": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "ReachHand": {
-        "flags": 2,
-        "uid": "nil"
-       },
-       "Title": "Station",
-       "Description": "",
-       "Radius": 6.0,
-       "Focus": {
-        "flags": 2,
-        "uid": "nil"
        }
       }
      ]
