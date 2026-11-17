@@ -5560,7 +5560,7 @@
     },
     "has_tag_component": true,
     "tag_component": {
-     "name": "Mannequin",
+     "name": "UE Mannequin",
      "tag": ""
     },
     "has_layer_component": true,
@@ -5654,7 +5654,7 @@
       {
        "type": "AnimationSample.FootstepEffects",
        "@slot": "0d35ab98-a577-874f-89de-e00bff7e670f",
-       "DisplayName": "Mannequin",
+       "DisplayName": "UE Mannequin",
        "LeftFootBone": "foot_l",
        "RightFootBone": "foot_r",
        "Dust": {
@@ -9556,7 +9556,7 @@
     },
     "has_text_component": true,
     "text_component": {
-     "text": "Mannequin\nspine_01 names",
+     "text": "UE mannequin\nUE names",
      "is_rich": true,
      "font": {
       "uid": "12c7fa32-e115-dd4b-925b-d8d95b59aae8"
@@ -9678,7 +9678,7 @@
     },
     "has_tag_component": true,
     "tag_component": {
-     "name": "Mannequin F",
+     "name": "UE Mannequin F",
      "tag": ""
     },
     "has_layer_component": true,
@@ -9772,7 +9772,7 @@
       {
        "type": "AnimationSample.FootstepEffects",
        "@slot": "131281aa-fd0c-9a4a-bf9e-7435d3c6ac7c",
-       "DisplayName": "Mannequin F",
+       "DisplayName": "UE Mannequin F",
        "LeftFootBone": "foot_l",
        "RightFootBone": "foot_r",
        "Dust": {
@@ -13702,7 +13702,7 @@
     },
     "has_text_component": true,
     "text_component": {
-     "text": "Mannequin F\nother proportions",
+     "text": "UE mannequin F\nother proportions",
      "is_rich": true,
      "font": {
       "uid": "12c7fa32-e115-dd4b-925b-d8d95b59aae8"
